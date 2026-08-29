@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВЫБОРЕСТЬ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Модальное окно (фон затемнения) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+}
+
+/* Контент модального окна */
+.modal-content {
+    background: transparent;
+    margin: 0;
+    padding: 100px 120px;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+    </style>
+</head>
+<body>
+    <div class="head">
+        <header class="header">
+            <div class="container">
+                <img class="logo-img" src="./img/logov.svg" alt="Фотография логотипа Выборесть">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="./catalog.html">ВУЗы и колледжи</a></li>
+                    <li class="nav-item"><a href="./event.html">Мероприятия</a></li>
+                    <li class="nav-item"><a href="#">Профориентационный тест</a></li>
+                    <li class="nav-item"><a href="./blog.html">Блог</a></li>
+                </ul>
+                <button>Помощь</button>
+            </div>
+        </header>
+    </div>
+    <div class="main" style="padding: 3%;">
+        <div class="onq" style="position: relative; width: 100%; max-width: 1680px; margin: 0 auto;">
+            <!-- Фоновое изображение -->
+            <img src="./img/fon.png" alt="Баннер" style="width: 100%; max-width: 1680px; height: auto; border-radius: 24px; display: block;">
+            
+            <!-- Текстовый блок поверх картинки (слева) -->
+            <div style=" display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left;">
+                
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; line-height: 1.2;">
+                    Выбрать профессию — страшно?<br>Мы сделаем это проще
+                </h1>
+                
+                <!-- Параграф -->
+                <p style="font-size: 22px; line-height: 1.5; margin-bottom: 30px;">
+                    <span style="color: #1E1E1E;">
+                    Подбор вузов, дни открытых дверей и истории тех, кто уже поступил. Всё, чтобы
+                    </span>
+                    ты не ошибся
+                </p>
+                                
+                <button id="openTestModal" style="display: inline-block; background-color: #2868A3; color: white; padding: 12px 32px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 18px; width: 282px; height: 49px; text-align: center; border: none; cursor: pointer;">
+                    Пройти тест
+                </button>
+                
+            </div>
+        </div>
+        <div class="profession">
+            <h1>профессии будущего</h1>
+            <div class="carddd">
+                <img src="./img/card1.svg" alt="">
+                <img src="./img/card2.svg" alt="">
+                <img src="./img/card3.svg" alt="">
+            </div>
+            <div class="carddd">
+                <img src="./img/card4.svg" alt="">
+                <img src="./img/card5.svg" alt="">
+            </div>
+        </div>
+        <div class="profession1">
+            <h1>Ближайшие события</h1>
+            <div class="container">
+                <a href="event.html"><button> Смотреть больше</button></a>
+            </div>
+        </div>
+        <div class="cards-grido">
+            <div class="productСard">
+                <img src="./img/main1.png" alt="">
+                <div style="display: flex; gap: 8px; flex-direction: column;">
+                    <h1>День открытых дверей в колледже ИТ.Москва</h1>
+                    <p>Вас ждет презентация колледжа и всех IT‑направлений, демонстрация студенческих проектов, онлайн‑экскурсия по лабораториям и зоне коворкинга</p>
+                </div>
+                <div class="date" style="padding-top: 9%;">
+                    <div style="display: flex; gap: 10px;">
+                        <img src="./img/date.svg" alt="" style="width: 20px; height: 20px; border-radius: 0;">
+                        <p>7 апреля, 10:00</p>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <img src="./img/date2.svg" alt="" style="width: 20px; height: 20px;">
+                        <p>трансляция в ВК</p>
+                    </div>
+                </div>
+            </div>
+            <div class="productСard">
+                <img src="./img/main2.png" alt="">
+                <div style="display: flex; gap: 8px; flex-direction: column;">
+                    <h1>Мастер‑класс по кибербезопасности в Политехническом колледже № 8</h1>
+                    <p>Участники попробуют себя в роли «белых хакеров». Под руководством преподавателя нужно будет найти уязвимости в учебном веб‑приложении, отразить атаку типа «отказ в обслуживании» и защитить свой файл‑флаг.</p>
+                </div>
+                <div class="date">
+                    <div style="display: flex; gap: 10px;">
+                        <img src="./img/date.svg" alt="" style="width: 20px; height: 20px; border-radius: 0;">
+                        <p>7 апреля, 10:00</p>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <img src="./img/date2.svg" alt="" style="width: 20px; height: 20px;">
+                        <p>трансляция в ВК</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profession1">
+            <h1>Что тебя волнует?</h1>
+            <div class="container">
+                <a href="./blog.html">
+                    <button>Смотреть больше</button>
+                </a>
+            </div>
+        </div>
+        <div class="quastions">
+            <div class="quastion" style="border-width: 2px 0px 1px 0px;">
+                <img src="./img/1.svg" alt="">
+                <div class="text">
+                    <h1>Что делать, если мне ничего не нравится?</h1>
+                    <p>
+                        Ничего страшного. В 16 лет не обязательно знать, кем ты станешь в 40. «Ничего не нравится» часто значит «я мало чего пробовал». Начни с обратного: выпиши, 
+                        что ты точно ненавидишь. Сидеть на месте? Общаться с людьми? Считать цифры? Это уже сужает круг. А потом попробуй разные бесплатные профпробы — их много в 
+                        колледжах и вузах на дни открытых дверей.
+                    </p>
+                </div>
+            </div>
+            <div class="quastion">
+                <img src="./img/1.svg" alt="">
+                <div class="text">
+                    <h1>Я хочу одно, родители — другое. Кого слушать?</h1>
+                    <p>
+                        Себя. Но с уважением к родителям. Они боятся за твоё будущее, поэтому предлагают «надёжные» варианты: юрист, экономист, инженер. Попробуй не спорить, 
+                        а исследовать: найди интервью с человеком, который работает по твоей профессии, покажи родителям цифры по зарплатам и вакансиям. Иногда страх уходит, 
+                        когда появляются факты. Если нет — это всё равно твоя жизнь.
+                    </p>
+                </div>
+            </div>
+            <div class="quastion">
+                <img src="./img/1.svg" alt="">
+                <div class="text">
+                    <h1>Я плохо сдаю ЕГЭ. У меня нет шансов поступить на бюджет?</h1>
+                    <p>
+                        Шансы есть всегда. Во‑первых, есть вузы, где проходные баллы ниже 60 — особенно в регионах и на вечернем отделении. Во‑вторых, можно сначала поступить в колледж 
+                        (туда идут по аттестату), 
+                        а после него сдавать внутренние экзамены в вуз. В‑третьих, есть целевое направление от предприятий. ЕГЭ — не приговор, а один из многих путей.
+                    </p>
+                </div>
+            </div>
+            <div class="quastion">
+                <img src="./img/1.svg" alt="">
+                <div class="text">
+                    <h1>Правда, что на платное отделение берут всех, кто заплатит?</h1>
+                    <p>
+                        Неправда. Даже на платное есть минимальные баллы — обычно от 40 до 60 по каждому предмету. Если ты набрал 20 баллов 
+                        по русскому, тебя не возьмут ни на бюджет, ни на платку. Но если ты сдал предметы хотя бы на тройку, платное — реальный вариант.
+                    </p>
+                </div>
+            </div>
+            <div class="quastion" style="border-width: 1px 0px 2px 0px;">
+                <img src="./img/1.svg" alt="">
+                <div class="text">
+                    <h1>Что такое целевое направление и как его получить?</h1>
+                    <p>
+                        Предприятие (завод, больница, школа) заключает с тобой договор: они платят за учёбу или дают стипендию, а ты после 
+                        вуза отрабатываешь у них 3–5 лет. Плюс: проходной балл ниже, часто помогают с общежитием. Минус: если захочешь уволиться 
+                        раньше — придётся возвращать деньги. Получить целевое можно через администрацию города или напрямую на крупных предприятиях 
+                        (РЖД, Газпром, Росатом). Начинать искать лучше за год до ЕГЭ.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="onq" style="position: relative; width: 100%; max-width: 1680px; margin: 0 auto; padding: 48px 64px 48px 64px; background-color: #2868A3; border-radius: 24px; min-height: 200px; gap: 64px; display: flex; flex-direction: row;">
+            <div class="left" style="display: flex; flex-direction: column; gap: 36px; width: 710px;">
+                <div class="img" style="display: flex; gap: 24px;">
+                    <img src="./img/main3.png" alt="">
+                    <img src="./img/main4.png" alt="">
+                </div>
+                <div class="t">
+                    <h1>Зачем мы это сделали?</h1>
+                    <p>Потому что сами через это прошли. Помним, как страшно выбирать, когда тебе 16, а вокруг все советуют разное.</p>
+                    <p>Мы не знаем, какая профессия подходит именно тебе. Но мы можем показать варианты, дать факты и познакомить с теми, кто уже сделал выбор. Дальше — <span class="y">твоё решение.</span></p>
+                </div>
+            </div>
+            <div class="ri"  style="display: flex; flex-direction: column; gap: 36px; width: 778px; padding-top: 2%;">
+                <h1>ВыборЕсть — это сайт для старшеклассников, которые хотят осознанно выбрать профессию.</h1>
+                <img src="./img/main5.png" alt="">
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="./main.html">
+                    <img class="footer-logo-img" src="./img/ВыборЕсть.svg" alt="Выборесть">
+                </a>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="./catalog.html">ВУЗы и колледжи</a></li>
+                <li><a href="./event.html">Мероприятия</a></li>
+                <li><a href="./test.html">Профилактический тест</a></li>
+                <li><a href="./blog.html">Блог</a></li>
+            </ul>
+            <div class="s">
+                <img src="./img/vk.png" alt="Вк">
+                <img src="./img/Vector (2).png" alt="Однокласники">
+            </div>
+            <div class="footer-copyright">
+                <p>© 2026 «ВыборЕсть». Для абитуриентов, которые хотят выбирать осознанно.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="testModal" class="modal">
+        <div class="modal-content" >
+            
+    <!-- СТАРТОВОЕ ОКНО -->
+        <div id="startWindow" class="onq" style="position: relative; width: 1680px; max-width: none; margin: 0; padding: 0; height: 700px; overflow: hidden; background-image: url('./img/test.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 36px;">
+
+            <div style="display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left; z-index: 2;">
+            
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; line-height: 1.2;">
+                    Попробуй понять, что тебе подходит
+                </h1>
+                
+                <div style="width: 831px; display: grid; gap: 16px;">
+                    <!-- Параграф -->
+                    <p style="font-size: 18px; margin-bottom: 30px; color: #5E5E5E;">
+                        Сложно выбрать профессию? Слишком много вариантов, слишком мало опыта? 
+                        Тест поможет тебе увидеть профессии, которые могут тебе подойти. Это не магия и не диагноз. Просто один из способов посмотреть на себя со стороны и сузить круг выбора.
+                    </p>
+                    <p style="font-size: 18px; color: #5E5E5E;">
+                        Всего 7 вопросов. А в конце ты получишь список профессий. Дальше решать тебе — изучить их подробнее, поискать вузы или пройти тест заново.
+                    </p>
+                    <p style="font-size: 18px;color: #5E5E5E;">
+                        Отвечай быстро. Первый вариант обычно самый честный — перед самим собой.
+                    </p>
+                    
+                    <!-- Кнопка -->
+                    <a href="#" id="onebutton" style="display: inline-block; background-color: #3CA1FF; color: white; padding: 12px 32px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 18px; width: 282px; height: 49px; text-align: center; line-height: 25px;">
+                        Пройти тест
+                    </a>
+                </div>      
+            </div>
+            <!-- Иконка справа вверху — стили сохранены (ширина 48px, высота 48px) -->
+            <img src="./img/btntest.svg" alt="" style="position: absolute; top: 10%; right: 10%; width: 48px; height: 48px; z-index: 10; display: block;">
+        </div>
+
+        <!--test1-->
+        <div id="test1" class="onq" style="position: relative; width: 1680px; max-width: none; margin: 0; padding: 0; height: 700px; overflow: hidden; background-image: url('./img/test1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 36px;">
+
+            <div style="display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left; z-index: 2;">
+        
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; font-size: 28px;">
+                    Что тебе интересно делать?
+                </h1>
+                
+                <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+                        <!-- Левая колонка (карточки 1, 2, 3) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 1 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Разбираться в устройствах, чинить, собирать</p>
+                            </div>
+                            <!-- Карточка 2 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Считать, анализировать данные, работать с цифрами</p>
+                            </div>
+                            <!-- Карточка 3 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Придумывать новое, рисовать, творить</p>
+                            </div>
+                        </div>
+                
+                        <!-- Правая колонка (карточки 4, 5, 6) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 4 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Помогать людям, заботиться</p>
+                            </div>
+                            <!-- Карточка 5 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Управлять, убеждать, организовывать</p>
+                            </div>
+                            <!-- Карточка 6 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Исследовать, экспериментировать, искать причины</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Иконка справа вверху — стили сохранены (ширина 48px, высота 48px) -->
+            <img src="./img/btntest.svg" alt="" style="position: absolute; top: 10%; right: 10%; width: 48px; height: 48px; z-index: 10; display: block;">
+            <div style="position: absolute; top: 10%; left: 5%; width: 1328px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start;">
+                <progress id="progress" value="10" max="70" style="width: 100%; height: 36px; display: block;"></progress>
+                <p style="margin: 8px 0 0 0; font-size: 14px; color: #5E5E5E;">Отвечено на: 1 из 7 вопросов</p>
+            </div>
+            <!-- Кнопка Далее внизу -->
+            <button id="twobutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 10%; border-radius: 10px; color: #A7A7A7; border: 2px solid #A7A7A7; background: white; cursor: pointer; font-size: 16px;">
+                Далее
+            </button>
+
+        </div>
+
+        <!--test2-->
+        <div id="test2" class="onq" style="position: relative; width: 1680px; max-width: none; margin: 0; padding: 0; height: 700px; overflow: hidden; background-image: url('./img/test1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 36px;">
+
+            <div style="display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left; z-index: 2;">
+        
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; font-size: 28px;">
+                    Какие предметы в школе тебе даются легче всего?
+                </h1>
+                
+                <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+                        <!-- Левая колонка (карточки 1, 2, 3) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 1 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Математика, физика, информатика</p>
+                            </div>
+                            <!-- Карточка 2 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Химия, биология, география</p>
+                            </div>
+                            <!-- Карточка 3 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Русский язык, литература, иностранный язык</p>
+                            </div>
+                        </div>
+                
+                        <!-- Правая колонка (карточки 4, 5, 6) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 4 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">История, обществознание, право</p>
+                            </div>
+                            <!-- Карточка 5 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Технология, ИЗО</p>
+                            </div>
+                            <!-- Карточка 6 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Физкультура, ОБЖ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Иконка справа вверху — стили сохранены (ширина 48px, высота 48px) -->
+            <img src="./img/btntest.svg" alt="" style="position: absolute; top: 10%; right: 10%; width: 48px; height: 48px; z-index: 10; display: block;">
+            <div style="position: absolute; top: 10%; left: 5%; width: 1328px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start;">
+                <progress id="progress" value="20" max="70" style="width: 100%; height: 36px; display: block;"></progress>
+                <p style="margin: 8px 0 0 0; font-size: 14px; color: #5E5E5E;">Отвечено на: 2 из 7 вопросов</p>
+            </div>
+            <!-- Кнопка Далее внизу -->
+            <button id="freebutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 10%; border-radius: 10px; color: #A7A7A7; border: 2px solid #A7A7A7; background: white; cursor: pointer; font-size: 16px;">
+                Далее
+            </button>
+            <button id="fourbutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 86%; border-radius: 10px; color: #3CA1FF; border: 2px solid #3CA1FF; background: white; cursor: pointer; font-size: 16px;">
+                Назад
+            </button>
+
+        </div>
+        <!--test3-->
+        <div id="test3" class="onq" style="position: relative; width: 1680px; max-width: none; margin: 0; padding: 0; height: 700px; overflow: hidden; background-image: url('./img/test1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 36px;">
+
+            <div style="display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left; z-index: 2;">
+        
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; font-size: 28px;">
+                    В какой обстановке ты хочешь работать?
+                </h1>
+                
+                <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+                        <!-- Левая колонка (карточки 1, 2, 3) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 1 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">В офисе, за компьютером</p>
+                            </div>
+                            <!-- Карточка 2 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">На природе или в разъездах (экспедиции, стройки, поля)</p>
+                            </div>
+                            <!-- Карточка 3 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">В лаборатории или мастерской в тишине</p>
+                            </div>
+                        </div>
+                
+                        <!-- Правая колонка (карточки 4, 5, 6) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 4 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">С людьми, в постоянном общении</p>
+                            </div>
+                            <!-- Карточка 5 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Удалённо, из дома или во время путешествий</p>
+                            </div>
+                        <!-- Карточка 6 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0; visibility: hidden;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Иконка справа вверху — стили сохранены (ширина 48px, высота 48px) -->
+            <img src="./img/btntest.svg" alt="" style="position: absolute; top: 10%; right: 10%; width: 48px; height: 48px; z-index: 10; display: block;">
+            <div style="position: absolute; top: 10%; left: 5%; width: 1328px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start;">
+                <progress id="progress" value="30" max="70" style="width: 100%; height: 36px; display: block;"></progress>
+                <p style="margin: 8px 0 0 0; font-size: 14px; color: #5E5E5E;">Отвечено на: 3 из 7 вопросов</p>
+            </div>
+            <!-- Кнопка Далее внизу -->
+            <button id="wbutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 10%; border-radius: 10px; color: #A7A7A7; border: 2px solid #A7A7A7; background: white; cursor: pointer; font-size: 16px;">
+                Далее
+            </button>
+            <button id="sbutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 86%; border-radius: 10px; color: #3CA1FF; border: 2px solid #3CA1FF; background: white; cursor: pointer; font-size: 16px;">
+                Назад
+            </button>
+
+        </div>
+        <!--test4-->
+        <div id="test4" class="onq" style="position: relative; width: 1680px; max-width: none; margin: 0; padding: 0; height: 700px; overflow: hidden; background-image: url('./img/test1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 36px;">
+
+            <div style="display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left; z-index: 2;">
+        
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; font-size: 28px;">
+                    Что для тебя важнее в будущей работе?
+                </h1>
+                
+                <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+                        <!-- Левая колонка (карточки 1, 2, 3) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 1 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Высокая зарплата (даже если работа скучная)</p>
+                            </div>
+                            <!-- Карточка 2 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Интересные задачи и проекты</p>
+                            </div>
+                            <!-- Карточка 3 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Стабильность и спокойствие (без стресса и дедлайнов)</p>
+                            </div>
+                        </div>
+                
+                        <!-- Правая колонка (карточки 4, 5, 6) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 4 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Свобода и гибкий график</p>
+                            </div>
+                            <!-- Карточка 5 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Помощь другим людям, польза обществу</p>
+                            </div>
+                        <!-- Карточка 6 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0; visibility: hidden;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Иконка справа вверху — стили сохранены (ширина 48px, высота 48px) -->
+            <img src="./img/btntest.svg" alt="" style="position: absolute; top: 10%; right: 10%; width: 48px; height: 48px; z-index: 10; display: block;">
+            <div style="position: absolute; top: 10%; left: 5%; width: 1328px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start;">
+                <progress id="progress" value="40" max="70" style="width: 100%; height: 36px; display: block;"></progress>
+                <p style="margin: 8px 0 0 0; font-size: 14px; color: #5E5E5E;">Отвечено на: 4 из 7 вопросов</p>
+            </div>
+            <!-- Кнопка Далее внизу -->
+            <button id="ibutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 10%; border-radius: 10px; color: #A7A7A7; border: 2px solid #A7A7A7; background: white; cursor: pointer; font-size: 16px;">
+                Далее
+            </button>
+            <button id="obutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 86%; border-radius: 10px; color: #3CA1FF; border: 2px solid #3CA1FF; background: white; cursor: pointer; font-size: 16px;">
+                Назад
+            </button>
+
+        </div>
+        <!--test5-->
+        <div id="test5" class="onq" style="position: relative; width: 1680px; max-width: none; margin: 0; padding: 0; height: 700px; overflow: hidden; background-image: url('./img/test1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 36px;">
+
+            <div style="display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left; z-index: 2;">
+        
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; font-size: 28px;">
+                    Какую задачу тебе было бы интересно решать?
+                </h1>
+                
+                <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+                        <!-- Левая колонка (карточки 1, 2, 3) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 1 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Оптимизировать процесс, чтобы он работал быстрее и дешевле</p>
+                            </div>
+                            <!-- Карточка 2 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Придумать что-то новое с нуля</p>
+                            </div>
+                            <!-- Карточка 3 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Разобраться в сложной проблеме и найти её причину</p>
+                            </div>
+                        </div>
+                
+                        <!-- Правая колонка (карточки 4, 5, 6) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 4 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Организовать команду и распределить задачи</p>
+                            </div>
+                            <!-- Карточка 5 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Обучить кого-то новому, объяснить сложное простыми словами</p>
+                            </div>
+                        <!-- Карточка 6 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0; visibility: hidden;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Иконка справа вверху — стили сохранены (ширина 48px, высота 48px) -->
+            <img src="./img/btntest.svg" alt="" style="position: absolute; top: 10%; right: 10%; width: 48px; height: 48px; z-index: 10; display: block;">
+            <div style="position: absolute; top: 10%; left: 5%; width: 1328px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start;">
+                <progress id="progress" value="50" max="70" style="width: 100%; height: 36px; display: block;"></progress>
+                <p style="margin: 8px 0 0 0; font-size: 14px; color: #5E5E5E;">Отвечено на: 5 из 7 вопросов</p>
+            </div>
+            <!-- Кнопка Далее внизу -->
+            <button id="abutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 10%; border-radius: 10px; color: #A7A7A7; border: 2px solid #A7A7A7; background: white; cursor: pointer; font-size: 16px;">
+                Далее
+            </button>
+            <button id="fbutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 86%; border-radius: 10px; color: #3CA1FF; border: 2px solid #3CA1FF; background: white; cursor: pointer; font-size: 16px;">
+                Назад
+            </button>
+
+        </div>
+        <!--test6-->
+        <div id="test6" class="onq" style="position: relative; width: 1680px; max-width: none; margin: 0; padding: 0; height: 700px; overflow: hidden; background-image: url('./img/test1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 36px;">
+
+            <div style="display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left; z-index: 2;">
+        
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; font-size: 28px;">
+                    Выбери 1 вариант, который тебе ближе:
+                </h1>
+                
+                <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+                        <!-- Левая колонка (карточки 1, 2, 3) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 1 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 1440px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Я предпочитаю работать один и сам отвечать за результат</p>
+                            </div>
+                            <!-- Карточка 2 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 1440px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Мне нравится работать в команде, обсуждать и спорить</p>
+                            </div>
+                            <!-- Карточка 3 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 1440px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Мне всё равно, главное — чтобы дело было интересным или прибыльным</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Иконка справа вверху — стили сохранены (ширина 48px, высота 48px) -->
+            <img src="./img/btntest.svg" alt="" style="position: absolute; top: 10%; right: 10%; width: 48px; height: 48px; z-index: 10; display: block;">
+            <div style="position: absolute; top: 10%; left: 5%; width: 1328px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start;">
+                <progress id="progress" value="60" max="70" style="width: 100%; height: 36px; display: block;"></progress>
+                <p style="margin: 8px 0 0 0; font-size: 14px; color: #5E5E5E;">Отвечено на: 6 из 7 вопросов</p>
+            </div>
+            <!-- Кнопка Далее внизу -->
+            <button id="gbutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 10%; border-radius: 10px; color: #A7A7A7; border: 2px solid #A7A7A7; background: white; cursor: pointer; font-size: 16px;">
+                Далее
+            </button>
+            <button id="hbutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 86%; border-radius: 10px; color: #3CA1FF; border: 2px solid #3CA1FF; background: white; cursor: pointer; font-size: 16px;">
+                Назад
+            </button>
+
+        </div>
+        <!--test7-->
+        <div id="test7" class="onq" style="position: relative; width: 1680px; max-width: none; margin: 0; padding: 0; height: 700px; overflow: hidden; background-image: url('./img/test1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 36px;">
+
+            <div style="display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left; z-index: 2;">
+        
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; font-size: 28px;">
+                    Представь, что тебе 30 лет. Как выглядит твой идеальный рабочий день?
+                </h1>
+                
+                <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+                        <!-- Левая колонка (карточки 1, 2, 3) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 1 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Я управляю проектом или отделом, принимаю решения</p>
+                            </div>
+                            <!-- Карточка 2 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Я решаю сложную техническую или научную задачу</p>
+                            </div>
+                            <!-- Карточка 3 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Я преподаю, консультирую или помогаю людям</p>
+                            </div>
+                        </div>
+                
+                        <!-- Правая колонка (карточки 4, 5, 6) -->
+                        <div style="display: grid; gap: 16px;">
+                            <!-- Карточка 4 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #1A1A1A; display: block;">Я создаю что-то новое: олежду, музыку, книгу, приложение</p>
+                            </div>
+                            <!-- Карточка 5 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Я создаю что-то новое: олежду, музыку, книгу, приложение</p>
+                            </div>
+                            <!-- Карточка 6 -->
+                            <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 702px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                                <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; flex-shrink: 0; margin: 0; display: block;">
+                                <p style="margin: 0; font-size: 16px; padding-top: 20px; line-height: 20px; color: #1A1A1A; display: block;">Я работаю руками или на выезде, не сижу на месте</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Иконка справа вверху — стили сохранены (ширина 48px, высота 48px) -->
+            <img src="./img/btntest.svg" alt="" style="position: absolute; top: 10%; right: 10%; width: 48px; height: 48px; z-index: 10; display: block;">
+            <div style="position: absolute; top: 10%; left: 5%; width: 1328px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start;">
+                <progress id="progress" value="70" max="70" style="width: 100%; height: 36px; display: block;"></progress>
+                <p style="margin: 8px 0 0 0; font-size: 14px; color: #5E5E5E;">Отвечено на: 7 из 7 вопросов</p>
+            </div>
+            <!-- Кнопка Далее внизу -->
+            <button id="vbutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 10%; border-radius: 10px; color: #A7A7A7; border: 2px solid #A7A7A7; background: white; cursor: pointer; font-size: 16px;">
+                Узнать результат
+            </button>
+            <button id="mnbutton" style="width: 155px; height: 41px; position: absolute; top: 80%; right: 86%; border-radius: 10px; color: #3CA1FF; border: 2px solid #3CA1FF; background: white; cursor: pointer; font-size: 16px;">
+                Назад
+            </button>
+
+        </div>
+    <!--test - resalt-->
+    <div id="test-resalt" class="onq" style="position: relative; width: 1680px; max-width: none; margin: 0; padding: 0; height: 880px; overflow: hidden; background-image: url('./img/resalt.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 36px;">
+
+        <div style="display: flex; flex-direction: column; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); gap: 24px; color: #2868A3; text-align: left; z-index: 2;">
+            
+            <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 9%;">
+                    <!-- Левая колонка (карточки 1, 2, 3) -->
+                    <div style="display: grid; gap: 24px;">
+                        <img src="./img/t.png" alt="" style="width: 480px; height: 360px; border-radius: 16px;">
+                        <p style="font-size: 20px; width: auto;">Тип: Человек - Природа</p>
+                    </div>
+            
+                    <!-- Правая колонка  -->
+                    <div style="display: grid; gap: 16px;">
+                        <div style="display: grid; gap: 36px;">
+                            <p style="color: #5E5E5E; font-size: 16px; height: 72px;">Тебе интересно, как устроен живой мир: растения, животные, экосистемы. Ты готов работать на улице или в лаборатории, но главное — чтобы твоя деятельность была связана с живыми существами или окружающей средой. Тебе не страшны ни грязь, ни непогода, ни терпение, которое нужно в работе с природой.</p>
+                            <p style="font-size: 20px; font-weight: 600; height: auto; line-height: normal;">Варианты профессий</p>
+                        </div>
+                        <!-- Карточка 1 -->
+                        <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 67px; width: 845px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                            <p style="margin: 0; width: 119px; height: 19px; font-size: 16px; color: #1E1E1E; display: block;">Ветеринар</p>
+                            <p style="margin: 0; padding-top: 20px; font-size: 16px; line-height: 20px; color: #5E5E5E; display: block;">Лечить животных — от домашних питомцев до сельскохозяйственных</p>
+                        </div>
+                        <!-- Карточка 2 -->
+                        <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 86px; width: 845px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                            <p style="margin: 0; width: 158px; height: 19px; font-size: 16px; color: #1E1E1E; display: block;">Биолог / эколог</p>
+                            <p style="margin: 0; font-size: 16px; padding-top: 14px; line-height: 20px; color: #5E5E5E; display: block;">Изучать живые организмы, следить за состоянием окружающей среды, проводить исследования</p>
+                        </div>
+                        <!-- Карточка 3 -->
+                        <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 845px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                            <p style="margin: 0; width: 119px; height: 19px; font-size: 16px; color: #1E1E1E; display: block;">Агроном</p>
+                            <p style="margin: 0; font-size: 16px; padding-top: 14px; line-height: 20px; color: #5E5E5E; display: block;">Работать с растениями: от посадки до урожая, управлять процессами в сельском хозяйстве</p>
+                        </div>
+                        <!-- Карточка 4 -->
+                        <div class="productCard" style="box-sizing: border-box; display: flex; flex-direction: row; align-items: center; padding: 24px 36px; gap: 20px; height: 68px; width: 845px; min-height: 68px; background: #FFFFFF; border: 1px solid #F0F0F0; box-shadow: 0px 192px 77px rgba(186, 186, 186, 0.01), 0px 108px 65px rgba(186, 186, 186, 0.04), 0px 48px 48px rgba(186, 186, 186, 0.07), 0px 12px 26px rgba(186, 186, 186, 0.08); border-radius: 16px; flex: none; order: 0; flex-grow: 0;">
+                            <p style="margin: 0; width: 119px; height: 19px; font-size: 16px; color: #1E1E1E; display: block;">Лесничий</p>
+                            <p style="margin: 0; font-size: 16px; padding-top: 14px; line-height: 20px; color: #5E5E5E; display: block;">Следить за состоянием лесов, защищать их от пожаров и вредителей, планировать высадки</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Иконка справа вверху — стили сохранены (ширина 48px, высота 48px) -->
+        <img src="./img/btntest.svg" alt="" style="position: absolute; top: 10%; right: 10%; width: 48px; height: 48px; z-index: 10; display: block;">
+        <div style="position: absolute; top: 10%; left: 5%; width: 1328px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start;">
+            <div  style="color: #2868A3;">
+                <!-- Заголовок h1 -->
+                <h1 style="font-weight: bold; margin: 0 0 20px 0; font-size: 28px;">
+                    Тебе может подойти работа с природой
+                </h1>
+            </div>
+        </div>
+        <!-- Кнопка Далее внизу -->
+        <a href="./catalog.html">
+            <button id="resultbutton" style="width: 259px; height: 41px; position: absolute; top: 88%; right: 10%; border-radius: 10px; color: #FFFFFF; border: none; background: #3CA1FF; cursor: pointer; font-size: 16px;">
+                Смотреть ВУЗы 
+            </button>
+        </a>
+
+        </div>
+        </div>
+    </div>
+    <script>
+        // === УПРАВЛЕНИЕ МОДАЛЬНЫМ ОКНОМ ===
+const modal = document.getElementById('testModal');
+const openModalBtn = document.getElementById('openTestModal');
+const closeModalBtn = document.querySelector('.close-modal');
+
+// Открыть модальное окно при клике на кнопку
+if (openModalBtn) {
+    openModalBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // запрещаем скролл фона
+        
+        // Показываем стартовое окно (индекс 0 в вашем массиве sections)
+        // Переменная currentSection и showSection уже есть в вашем коде
+        if (typeof showSection === 'function') {
+            showSection(0);
+        }
+    });
+}
+
+// Закрыть модальное окно при клике на крестик
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // возвращаем скролл
+    });
+}
+
+// Закрыть модальное окно при клике на фон (но не на контент)
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+});
+
+ // Ждём полной загрузки DOM
+ document.addEventListener('DOMContentLoaded', function() {
+
+// === НАСТРОЙКИ ===
+// Список всех окон-блоков вопросов
+const sections = [
+    'startWindow',   // 0
+    'test1',         // 1
+    'test2',         // 2
+    'test3',         // 3
+    'test4',         // 4
+    'test5',         // 5
+    'test6',         // 6
+    'test7',         // 7
+    'test-resalt'    // 8
+];
+
+let currentSection = 0; // Начинаем с test1 (индекс 1), но startWindow показываем отдельно
+
+// Функция показа нужного окна
+function showSection(index) {
+    // Скрываем все окна
+    sections.forEach(sectionId => {
+        const el = document.getElementById(sectionId);
+        if (el) el.style.display = 'none';
+    });
+    // Показываем нужное
+    const target = document.getElementById(sections[index]);
+    if (target) target.style.display = 'block';
+    currentSection = index;
+}
+
+// Сначала показываем startWindow, остальные скрыты
+showSection(0);
+
+// === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ДЛЯ КАЖДОГО ТЕСТОВОГО БЛОКА ===
+// Функция проверки выбора чекбоксов в конкретном блоке
+function isAnyCheckboxChecked(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return false;
+    const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+    for (let cb of checkboxes) {
+        if (cb.checked) return true;
+    }
+    return false;
+}
+
+// Функция обновления стиля кнопки "Далее" для конкретного блока
+function updateNextButtonStyle(containerId, buttonId) {
+    const container = document.getElementById(containerId);
+    const button = document.getElementById(buttonId);
+    if (!container || !button) return;
+    
+    const anyChecked = isAnyCheckboxChecked(containerId);
+    if (anyChecked) {
+        button.style.color = '#3CA1FF';
+        button.style.border = '2px solid #3CA1FF';
+        button.style.background = 'white';
+        button.disabled = false;
+    } else {
+        button.style.color = '#A7A7A7';
+        button.style.border = '2px solid #A7A7A7';
+        button.style.background = 'white';
+        button.disabled = true;
+    }
+}
+
+// Функция привязки обработчиков к чекбоксам внутри блока
+function bindCheckboxListeners(containerId, buttonId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', function() {
+            updateNextButtonStyle(containerId, buttonId);
+        });
+    });
+    // Первоначальная установка стиля кнопки
+    updateNextButtonStyle(containerId, buttonId);
+}
+
+// === ПРИВЯЗЫВАЕМ ОБРАБОТЧИКИ КО ВСЕМ ТЕСТОВЫМ БЛОКАМ ===
+// test1 (индекс 1)
+bindCheckboxListeners('test1', 'twobutton');
+// test2
+bindCheckboxListeners('test2', 'freebutton');
+// test3
+bindCheckboxListeners('test3', 'wbutton');
+// test4
+bindCheckboxListeners('test4', 'ibutton');
+// test5
+bindCheckboxListeners('test5', 'abutton');
+// test6
+bindCheckboxListeners('test6', 'gbutton');
+// test7
+bindCheckboxListeners('test7', 'vbutton');
+
+// === ОБРАБОТЧИКИ КНОПОК "ДАЛЕЕ" ===
+// Стартовая кнопка "Пройти тест"
+const startBtn = document.getElementById('onebutton');
+if (startBtn) {
+    startBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showSection(1); // Показываем test1
+    });
+}
+
+// test1 -> test2
+const next1 = document.getElementById('twobutton');
+if (next1) {
+    next1.addEventListener('click', function() {
+        if (!isAnyCheckboxChecked('test1')) return;
+        showSection(2);
+    });
+}
+
+// test2 -> test3
+const next2 = document.getElementById('freebutton');
+if (next2) {
+    next2.addEventListener('click', function() {
+        if (!isAnyCheckboxChecked('test2')) return;
+        showSection(3);
+    });
+}
+
+// test3 -> test4
+const next3 = document.getElementById('wbutton');
+if (next3) {
+    next3.addEventListener('click', function() {
+        if (!isAnyCheckboxChecked('test3')) return;
+        showSection(4);
+    });
+}
+
+// test4 -> test5
+const next4 = document.getElementById('ibutton');
+if (next4) {
+    next4.addEventListener('click', function() {
+        if (!isAnyCheckboxChecked('test4')) return;
+        showSection(5);
+    });
+}
+
+// test5 -> test6
+const next5 = document.getElementById('abutton');
+if (next5) {
+    next5.addEventListener('click', function() {
+        if (!isAnyCheckboxChecked('test5')) return;
+        showSection(6);
+    });
+}
+
+// test6 -> test7
+const next6 = document.getElementById('gbutton');
+if (next6) {
+    next6.addEventListener('click', function() {
+        if (!isAnyCheckboxChecked('test6')) return;
+        showSection(7);
+    });
+}
+
+// test7 -> test-resalt
+const next7 = document.getElementById('vbutton');
+if (next7) {
+    next7.addEventListener('click', function() {
+        if (!isAnyCheckboxChecked('test7')) return;
+        showSection(8);
+    });
+}
+
+// === ОБРАБОТЧИКИ КНОПОК "НАЗАД" ===
+// test2 -> test1
+const back2 = document.getElementById('fourbutton');
+if (back2) {
+    back2.addEventListener('click', function() {
+        showSection(1);
+    });
+}
+// test3 -> test2
+const back3 = document.getElementById('sbutton');
+if (back3) {
+    back3.addEventListener('click', function() {
+        showSection(2);
+    });
+}
+// test4 -> test3
+const back4 = document.getElementById('obutton');
+if (back4) {
+    back4.addEventListener('click', function() {
+        showSection(3);
+    });
+}
+// test5 -> test4
+const back5 = document.getElementById('fbutton');
+if (back5) {
+    back5.addEventListener('click', function() {
+        showSection(4);
+    });
+}
+// test6 -> test5
+const back6 = document.getElementById('hbutton');
+if (back6) {
+    back6.addEventListener('click', function() {
+        showSection(5);
+    });
+}
+// test7 -> test6
+const back7 = document.getElementById('mnbutton');
+if (back7) {
+    back7.addEventListener('click', function() {
+        showSection(6);
+    });
+}
+
+});
+// Добавляем обработчик клика на иконку btntest.svg для перехода на main.html
+document.addEventListener('DOMContentLoaded', function() {
+    // Находим все иконки btntest.svg на странице (они есть в каждом блоке)
+    const iconButtons = document.querySelectorAll('img[src="./img/btntest.svg"]');
+    
+    // Для каждой найденной иконки добавляем обработчик клика
+    iconButtons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            window.location.href = './main.html';
+        });
+        // Меняем курсор на указатель, чтобы показать, что элемент кликабельный
+        icon.style.cursor = 'pointer';
+    });
+});
+    </script>
+
+</body>
+
+
+</html>

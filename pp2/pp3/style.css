@@ -1,0 +1,647 @@
+/* Обнуление и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background-color: #2D2340; /* Основной фон */
+    padding-right: 120px;
+    padding-left: 120px;
+    gap: 140px;
+}
+
+.heroblock {
+    position: relative;
+    width: 1680px;
+    height: 813px;
+    overflow: hidden;
+}
+
+/* Слой с эллипсами */
+.hero-ellipses-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Общие стили для всех эллипсов */
+.hero-ellipse {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(500px);
+    opacity: 0.12; /* ОЧЕНЬ низкая прозрачность для "чуть-чуть" эффекта */
+    pointer-events: none;
+}
+
+/* Контент поверх эллипсов */
+.header,
+.hero {
+    position: relative;
+    z-index: 1;
+}
+
+.ellipse-t{
+    position: absolute;
+    left: 10%;
+    bottom: 0;          /* прижать к низу блока */
+    width: 883.79px;
+    transform: rotate(31.63deg);
+    pointer-events: none; /* чтобы не мешал кликам */
+    z-index: 0;
+}
+.ellipse-to{
+    position: absolute;
+    bottom: -15%;
+    left: 3%;
+    width: 306.6px;
+    height: 306.6px;
+    transform: rotate(-46deg);
+    pointer-events: none; /* чтобы не мешал кликам */
+    z-index: 0;
+}
+.ellipse-tot{
+    position: absolute;
+    left: -12%;
+    bottom: -30.83%;
+    width: 548.28px;
+    height: 548.28px;
+    transform: rotate(-48.63deg);
+    border-radius: 50%;
+}
+.header {
+    display: flex;
+    width: 1680px;
+    height: 113px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    justify-content: space-between;
+}
+
+.nav ul {
+    display: flex;
+    width: 509px;
+    height: 21px;
+    gap: 48px;
+    list-style: none;
+    color: #FFFFFF;
+}
+
+.header button {
+    width: 148px;
+    height: 41px;
+    border-radius: 10px;
+    border-width: 1px;
+    padding-top: 10px;
+    padding-right: 48px;
+    padding-bottom: 10px;
+    padding-left: 48px;
+    gap: 10px;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.hero {
+    display: flex;
+    width: 1680px;
+    height: 700px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    gap: 40px;
+    position: relative;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    width: 1299px;
+    height: 300px;
+    gap: 16px;
+    color: #FFFFFF;
+}
+
+.text h1 {
+    font-family: "Unbounded-ExtraBold";
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 100px;
+    text-transform: uppercase;
+}
+
+.text p {
+    font-family: "SF-Pro-Display-Medium";
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    width: 889px;
+    height: 84px;
+}
+
+.left button{
+    width: 301px;
+    height: 45px;
+    padding-top: 12px;
+    padding-right: 48px;
+    padding-bottom: 12px;
+    padding-left: 48px;
+    border-radius: 10px;
+    border: none;
+    background-color: #7F38E2;
+    color: #ffffff;
+    font-family: "SFProText-Semibold";
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    gap: 40px;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    right: -85px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1023px;
+    height: 860px;
+    background-image: url('./img/imzh-bg-removed.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    mix-blend-mode: screen;  /* или color-dodge — что лучше смотрится */
+    pointer-events: none;
+    z-index: 1;
+}
+.container{
+    display: flex;
+    gap: 80px;
+}
+
+.textone{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    width: 634px;
+    height: 212px;
+    gap: 28px;
+}
+.textone h1{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #E2CEFD;
+}
+
+.textone p{
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: justify;
+
+}
+
+/* Контейнер для карточек (исправленный .onr) */
+.onr {
+    width: 966px;
+    display: grid;           /* Включаем Grid (вместо columns: 2) */
+    grid-template-columns: 1fr 1fr; /* Две колонки одинаковой ширины */
+    gap: 24px;              /* Расстояние между карточками (row-gap + column-gap) */
+}
+
+/* Стиль карточки (.two) */
+.two {
+    display: grid;
+    width: 475px;
+    height: 149px;
+    padding-top: 20px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    gap: 12px;
+
+    opacity: 1;
+    border-radius: 16px;
+    border-width: 1px;
+    border: 1px solid #DEDEDE33;
+    color: #FFFFFF;
+}
+
+.two h1 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;   /* line-height: 100% — это слишком мало для текста */
+    margin: 0;          /* Убираем отступы h1 по умолчанию */
+}
+
+.two p {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+
+.m{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+.m h1{
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #E2CEFD;
+
+}
+
+.m1{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+.m1 h1{
+    font-weight: 500;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #E2CEFD;
+
+}
+
+.cards{
+    display: flex;
+    width: 1680px;
+    height: 160px;
+    gap: 16px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center;     /* Центрирование по горизонтали */
+    width: 408px;
+    height: 160px;
+    padding: 16px 20px;      /* Упрощённая запись */
+    gap: 16px;
+    border-radius: 16px;
+    background: #1E1826;
+    border: 1px solid #DEDEDE33;
+}
+
+.card h1{
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;      /* Текст внутри h1 по центру */
+    color: #ffffff;
+    margin: 0;               /* Убираем отступы h1 по умолчанию */
+}
+
+.card p{
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;      /* Текст внутри h1 по центру */
+    color: #ffffff;
+    margin: 0;               /* Убираем отступы h1 по умолчанию */
+}
+
+.card img{
+    width: 56px;
+    height: 48px;
+    display: block;          /* Убираем лишние отступы у img */
+}
+
+.lq{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+.lq p{
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color:#DEDEDE;
+    
+}
+
+.crdsa{
+    display: flex;
+    flex-direction: column;
+    width: 1299px;
+    height: 383px;
+    padding-top: 48px;
+    padding-right: 36px;
+    padding-bottom: 48px;
+    padding-left: 36px;
+    gap: 36px;
+    opacity: 1;
+    border-radius: 24px;
+    border-width: 1px;
+    background: #1E182680;
+
+}
+
+.crdsa h1{
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+}
+
+.ops h1{
+    font-family: "SFProText-Bold";
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.minicard{
+    display: flex;
+    width: 364px;
+    height: 216px;
+    padding-top: 16px;
+    padding-right: 20px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    gap: 16px;
+    border-radius: 16px;
+    border-width: 1px;
+    background: #FFFFFF1A;
+
+}
+
+.prospects{
+    display: flex;
+    gap: 100px;
+    position: relative;
+    overflow: visible; /* если эллипс должен выходить за границы */
+}
+.mop{
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    height: 274px;
+    gap: 36px;
+}
+
+.mop h1{
+    font-family: "Unbounded-Medium";
+    font-size: 36px;
+    color: #E2CEFD;
+    font-weight: 500;
+    line-height: 50px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+}
+.mop p{
+    font-size: 16px;
+    color: #FFFFFF;
+}
+span{
+    font-family: "SFProText-Semibold";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0%;
+}
+.ball {
+    width: 48px;
+    height: 48px;
+    border-radius: 1000px;
+    background: #E2CEFD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ball p {
+    color: #322742;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1;
+    margin: 0;
+}
+
+/* Используем Grid для точного размещения */
+.group {
+    display: grid;
+    grid-template-columns: auto auto auto auto; /* 4 колонки: круг1, стрелка1, круг2, стрелка2, круг3, а потом отдельно для нижнего ряда */
+    gap: 17px;
+    align-items: start;
+    padding-bottom: 13%;
+}
+
+.fr {
+    display: flex;
+    align-items: center;
+    width: 680px;
+    height: 151px;
+    padding-top: 20px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    gap: 36px;
+
+    opacity: 1;
+    border-radius: 16px;
+    border-width: 1px;
+    border: 1px solid #DEDEDE33;
+    color: #FFFFFF;
+}
+.fr h1{
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff;
+
+}
+.qaw{
+    display: flex;
+    flex-direction: column;
+    width: 516px;
+    height: 95px;
+    gap: 12px;
+    opacity: 1;
+
+}
+.ll {
+    display: flex;
+    align-items: center;
+    width: 976px;
+    height: 151px;
+    padding-top: 20px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    gap: 36px;
+
+    opacity: 1;
+    border-radius: 16px;
+    border-width: 1px;
+    border: 1px solid #DEDEDE33;
+    color: #FFFFFF;
+}
+.ll h1{
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff;
+
+}
+
+
+.texttwo{
+    display: flex;
+    color: #ffffff;
+    width: 1680px;
+    height: 120px;
+    gap: 64px;
+}
+.texttwo h1{
+    height: 120px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #E2CEFD;
+}
+
+.texttwo p{
+    font-family: "SF-Pro-Display-Medium";
+    height: 120px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: justify;
+
+}
+
+
+.apo{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.apow{
+    display: flex;
+
+    gap: 24px;
+}
+
+.foother {
+    display: flex;
+    width: 1680px;
+    height: 388px;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 120px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    padding-top: 80px;
+    padding-right: 120px;
+    padding-bottom: 48px;
+    padding-left: 120px;
+    gap: 200px;
+    background: #1E182680;
+    border-style: solid;
+}
+
+.foo {
+    width: 824px;
+    height: 260px;
+    position: relative;  /* добавлено */
+}
+
+.foo p {
+    font-family: "Unbounded-Medium";
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #E2CEFD;
+}
+.socialIcons {
+    display: flex;
+    width: 120px;
+    height: 48px;
+    gap: 24px;
+    position: absolute;
+    bottom: 0;    /* прижимаем к нижнему краю */
+    right: 0;     /* прижимаем к правому краю */
+}
+.footer-logo {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 192px;
+    height: 160px;
+}
+
+/* Стили для иконок останутся без изменений */
+.socialIcons img {
+    /* если нужно что-то специфичное для иконок */
+    width: auto;
+    height: auto;
+}
+
+[data-style="plain"] {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+
+@font-face {
+    font-family: "Unbounded-ExtraBold";
+    src: url(./font/Unbounded-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: "SF-Pro-Display-Medium";
+    src: url(./font/SF-Pro-Display-Medium.otf);
+}
+
+@font-face {
+    font-family: "SFProText-Bold";
+    src: url(./font/SFProText-Bold.ttf);
+}
+
+@font-face {
+    font-family: "SFProText-Semibold";
+    src: url(./font/SFProText-Semibold.ttf);
+}
+
+
+@font-face {
+    font-family: "Unbounded-Medium";
+    src: url(./font/Unbounded-Medium.ttf);
+}

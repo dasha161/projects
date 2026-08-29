@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВУЗы и колледжи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="head">
+        <header class="header">
+            <div class="container">
+                <a href="./main.html">
+                    <img class="logo-img" src="./img/logov.svg" alt="Фотография логотипа Выборесть">
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#" style="color: #2868A3;">ВУЗы и колледжи</a></li>
+                    <li class="nav-item"><a href="./event.html">Мероприятия</a></li>
+                    <li class="nav-item"><a href="./test.html">Профориентационный тест</a></li>
+                    <li class="nav-item"><a href="./blog.html">Блог</a></li>
+                </ul>
+                <button>Помощь</button>
+            </div>
+        </header>
+    </div>
+    <div class="main">
+        <div class="one">
+            <div class="two">
+                <h1>Выбери свой путь: вузы и колледжи России</h1>
+                <div class="intb">
+                    <input type="text" placeholder="Поиск">
+                    <button>Сравнить</button>
+                </div>
+            </div>
+        </div>
+        <div class="catalog-layout">
+             <!-- Левая часть: фильтры -->
+        <div class="left">
+            <div class="filter-section">
+                <div class="filter-label">Тип</div>
+                <div class="type-buttons">
+                    <label class="format-item">
+                        <input type="checkbox"> ВУЗ (11 классов)
+                    </label>
+                    <label class="format-item">
+                        <input type="checkbox"> Колледж (с 9 классов)
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-label">Направление</div>
+                <select class="direction-select">
+                    <option>Выбрать направление</option>
+                    <option>IT и цифровые технологии</option>
+                    <option>Бизнес и управление</option>
+                    <option>Педагогика</option>
+                    <option>Инженерия</option>
+                </select>
+            </div>
+
+           
+            <div class="filter-section">
+                <div class="filter-label">Предметы для сдачи</div>
+                <select class="subjects-box">
+                    <option>Выбрать предметы</option>
+                    <option>Информатика</option>
+                    <option>Химия</option>
+                    <option>Литература</option>
+                    <option>Истоория</option>
+                </select>
+            </div>
+
+            <div class="filter-sectiont">
+                <div class="filter-label">Проходной балл (ЕГЭ)</div>
+                <input type="text" class="score-input" placeholder="от">
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-label">Город</div>
+                <select class="city-select">
+                    <option>Выбрать город</option>
+                    <option>Москва</option>
+                    <option>Санкт-Петербург</option>
+                    <option>Тольятти</option>
+                    <option>Казань</option>
+                </select>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-label">Формат обучения</div>
+                <div class="format-options">
+                    <label class="format-item">
+                        <input type="checkbox"> Очно
+                    </label>
+                    <label class="format-item">
+                        <input type="checkbox"> Очно-заочно
+                    </label>
+                    <label class="format-item">
+                        <input type="checkbox"> Заочно
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-label">Дополнительно</div>
+                <div class="additional-options">
+                    <label class="format-item">
+                        <input type="checkbox"> Бюджетные места
+                    </label>
+                    <label class="format-item">
+                        <input type="checkbox"> Целевое обучение
+                    </label>
+                    <label class="format-item">
+                        <input type="checkbox"> Платное обучение
+                    </label>
+                    <label class="format-item">
+                        <input type="checkbox"> Общежитие
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="cards-grid">
+            
+                <!-- 1. Тольяттинский социально-педагогический колледж -->
+                <div class="card">
+                    <img src="./img/tspk.png" alt="ТСПК">
+                    <div class="card-content">
+                        <h1>Тольяттинский социально-педагогический колледж</h1>
+                        <div class="textcat">
+                            <p>Направления: Педагогика, Физическая культура, IT</p>
+                            <p>Город: Тольятти</p>
+                        </div>
+                        <div class="bst">
+                            <div class="buttons">
+                                <button>Колледж</button>
+                                <button>Бюджет</button>
+                                <button>Общежитие</button>
+                            </div>
+                            <img src="./img/Star 2.png" alt="" style="width: auto; height: auto; padding: 0;">
+                        </div>
+                    </div>
+                </div>
+                 <!-- 2. Санкт-Петербургский политехнический университет Петра Великого -->
+                 <div class="card">
+                    <img src="./img/pol.png" alt="">
+                    <div class="card-content">
+                        <h1>Санкт-Петербургский политехнический университет Петра Великого</h1>
+                        <div class="textcat">
+                            <p>Направления: инженерия, энергетика, IT, менеджмент</p>
+                            <p>Город: Санкт-Петербург</p>
+                        </div>
+                        <div class="bst" style="gap: 40%;">
+                            <div class="buttons">
+                                <button>Бюджет</button>
+                                <button>Общежитие</button>
+                            </div>
+                            <img src="./img/Star 3.png" alt="" style="width: auto; height: auto; padding: 0;">
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- 3. Высшая школа экономики -->
+                 <div class="card">
+                    <img src="./img/v.png" alt="">
+                    <div class="card-content">
+                        <h1>Высшая школа экономики</h1>
+                        <div class="textcat">
+                            <p>Направления: экономика, менеджмент, IT, социология</p>
+                            <p>Город: Москва</p>
+                        </div>
+                        <div class="bst" style="gap: 40%;">
+                            <div class="buttons">
+                                <button>Бюджет</button>
+                                <button>Общежитие</button>
+                            </div>
+                            <img src="./img/Star 3.png" alt="" style="width: auto; height: auto; padding: 0;">
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- 4. Казанский (Приволжский) федеральный университет -->
+                 <div class="card">
+                    <img src="./img/z.png" alt="ТСПК">
+                    <div class="card-content">
+                        <h1>Казанский (Приволжский) федеральный университет</h1>
+                        <div class="textcat">
+                            <p>Направления: Педагогика, Физическая культура, IT</p>
+                            <p>Город: Казань</p>
+                        </div>
+                        <div class="bst">
+                            <div class="buttons">
+                                <button>Колледж</button>
+                                <button>Бюджет</button>
+                                <button>Общежитие</button>
+                            </div>
+                            <img src="./img/Star 3.png" alt="" style="width: auto; height: auto; padding: 0;">
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- 5. Тольяттинский социально-педагогический колледж -->
+                 <div class="card">
+                    <img src="./img/tspk.png" alt="ТСПК">
+                    <div class="card-content">
+                        <h1>Тольяттинский социально-педагогический колледж</h1>
+                        <div class="textcat">
+                            <p>Направления: Педагогика, Физическая культура, IT</p>
+                            <p>Город: Тольятти</p>
+                        </div>
+                        <div class="bst">
+                            <div class="buttons">
+                                <button>Колледж</button>
+                                <button>Бюджет</button>
+                                <button>Общежитие</button>
+                            </div>
+                            <img src="./img/Star 2.png" alt="" style="width: auto; height: auto; padding: 0;">
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- 6. Тольяттинский социально-педагогический колледж -->
+                 <div class="card">
+                    <img src="./img/tspk.png" alt="ТСПК">
+                    <div class="card-content">
+                        <h1>Тольяттинский социально-педагогический колледж</h1>
+                        <div class="textcat">
+                            <p>Направления: Педагогика, Физическая культура, IT</p>
+                            <p>Город: Тольятти</p>
+                        </div>
+                        <div class="bst">
+                            <div class="buttons">
+                                <button>Колледж</button>
+                                <button>Бюджет</button>
+                                <button>Общежитие</button>
+                            </div>
+                            <img src="./img/Star 2.png" alt="" style="width: auto; height: auto; padding: 0;">
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- 7. Тольяттинский социально-педагогический колледж -->
+                 <div class="card">
+                    <img src="./img/tspk.png" alt="ТСПК">
+                    <div class="card-content">
+                        <h1>Тольяттинский социально-педагогический колледж</h1>
+                        <div class="textcat">
+                            <p>Направления: Педагогика, Физическая культура, IT</p>
+                            <p>Город: Тольятти</p>
+                        </div>
+                        <div class="bst">
+                            <div class="buttons">
+                                <button>Колледж</button>
+                                <button>Бюджет</button>
+                                <button>Общежитие</button>
+                            </div>
+                            <img src="./img/Star 2.png" alt="" style="width: auto; height: auto; padding: 0;">
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- 8. Тольяттинский социально-педагогический колледж -->
+                 <div class="card">
+                    <img src="./img/tspk.png" alt="ТСПК">
+                    <div class="card-content">
+                        <h1>Тольяттинский социально-педагогический колледж</h1>
+                        <div class="textcat">
+                            <p>Направления: Педагогика, Физическая культура, IT</p>
+                            <p>Город: Тольятти</p>
+                        </div>
+                        <div class="bst">
+                            <div class="buttons">
+                                <button>Колледж</button>
+                                <button>Бюджет</button>
+                                <button>Общежитие</button>
+                            </div>
+                            <img src="./img/Star 2.png" alt="" style="width: auto; height: auto; padding: 0;">
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- 9. Тольяттинский социально-педагогический колледж -->
+                 <div class="card">
+                    <img src="./img/tspk.png" alt="ТСПК">
+                    <div class="card-content">
+                        <h1>Тольяттинский социально-педагогический колледж</h1>
+                        <div class="textcat">
+                            <p>Направления: Педагогика, Физическая культура, IT</p>
+                            <p>Город: Тольятти</p>
+                        </div>
+                        <div class="bst">
+                            <div class="buttons">
+                                <button>Колледж</button>
+                                <button>Бюджет</button>
+                                <button>Общежитие</button>
+                            </div>
+                            <img src="./img/Star 2.png" alt="" style="width: auto; height: auto; padding: 0;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img class="footer-logo-img" src="./img/logov.svg" alt="Выборесть">
+            </div>
+            <ul class="footer-nav">
+                <li><a href="./catalog.html">ВУЗы и колледжи</a></li>
+                <li><a href="./event.html">Мероприятия</a></li>
+                <li><a href="./test.html">Профилактический тест</a></li>
+                <li><a href="./blog.html">Блог</a></li>
+            </ul>
+            <div class="s">
+                <img src="./img/vk.png" alt="Вк">
+                <img src="./img/Vector (2).png" alt="Однокласники">
+            </div>
+            <div class="footer-copyright">
+                <p>© 2026 «ВыборЕсть». Для абитуриентов, которые хотят выбирать осознанно.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

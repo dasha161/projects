@@ -1,0 +1,752 @@
+/* Обнуление и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+}
+
+        /* Модальное окно (фон затемнения) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow-y: auto;
+        }
+        
+        /* Контент модального окна */
+        .modal-content {
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+        }
+/* Блок .head */
+.head {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 120px;
+    /* убираем height, добавляем padding-top */
+    padding-top: 36px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+/* Сам header */
+.header {
+    width: 100%;               /* растягивается на 1680px внутри .head */
+    max-width: 1680px;
+    height: 97px;
+    padding: 28px 80px;        /* padding-top:28px; padding-bottom:28px; padding-left:80px; padding-right:80px; */
+    border-radius: 24px;
+    background-color: #F3F9FF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    margin: 0 auto;            /* центрирование внутри .head */
+}
+
+/* Контейнер внутри header — занимает всю ширину и распределяет элементы */
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* лого слева, меню справа */
+}
+
+/* Логотип */
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Навигационное меню */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+/* Пункты меню (ссылки) */
+.nav-item a {
+    font-family: "SFPro Text medium";
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1E1E1E;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-item a:hover {
+    color: #3CA1FF;
+}
+
+/* Кнопка */
+.container button {
+    font-family: "SFPro Text Bold";
+    width: 175px;
+    height: 41px;
+    padding: 0;
+    border-radius: 10px;
+    border: 2px solid #3CA1FF;
+    background-color: transparent;
+    color: #3CA1FF;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container button:hover {
+    background-color: #3CA1FF;
+    color: white;
+}
+/* Базовое состояние мобильного меню – скрыто */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #F3F9FF;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+    padding: 80px 32px 32px 32px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Когда меню открыто */
+.mobile-nav.open {
+    left: 0;
+}
+
+/* Стили списка внутри мобильного меню */
+.mobile-nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mobile-nav-menu .nav-item a {
+    font-family: "SFPro Text medium";
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1E1E1E;
+    display: block;
+    padding: 8px 0;
+}
+
+.mobile-nav-menu .nav-item a:hover {
+    color: #3CA1FF;
+}
+
+/* Затемнение фона (оверлей) – опционально */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+/* Основные стили футера */
+.footer {
+    background: #222222;
+    width: 100%;
+    min-height: 332px;
+    padding: 56px 120px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 40px;
+}
+
+.footer-logo {
+    flex: 0 0 auto;
+}
+
+.footer-logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+/* ГОРИЗОНТАЛЬНОЕ РАСПОЛОЖЕНИЕ И УБРАННЫЕ МАРКЕРЫ */
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    list-style: none;   /* убираем маркеры */
+    margin: 0;          
+    padding: 0;         
+}
+
+.footer-nav a {
+    color: #ffffff;
+    font-family: "SFPro Text medium";
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: opacity 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* Социальные сети */
+.s {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.s img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.s img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* Копирайт */
+.footer-copyright {
+    flex-basis: 100%;
+    margin-top: 16px;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-top: 1px solid #FFFFFF;
+    padding-top: 32px;
+    font-family: "SFPro Text medium";
+}
+
+/* Новый контейнер для картинки, имитирующий стиль header */
+.onq {
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden; /* Скрываем края, чтобы скругление было как у header */
+}
+
+.onq img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+/* catalog*/
+.main{
+    width: auto;
+    height: auto;
+    padding-bottom: 5%;
+}
+.one{
+    display: flex;
+    gap: 64px;
+}
+
+.two{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 120px 120px;
+    padding-top: 80px;
+    align-items: center;
+    background-color: #ffffff;
+    color: #2868A3;
+}
+.two h1 {
+    font-family: "SF Pro Text  display Bold";
+    font-weight: 700;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 100%;
+    text-transform: uppercase;  /* ← вместо font-variant: small-caps */
+    margin: 0;
+}
+ /* Стили для формы поиска + кнопки */
+ .intb {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    height: 100%;
+}
+ /* Поле ввода */
+ .intb input[type="text"] {
+    flex: 1;
+    height: 43px;
+    border: 1px solid #F0F0F0;
+    border-radius: 8px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #F9F9F9;
+    color: #1A1F36;
+    transition: 0.2s;
+    outline: none;
+    font-family: inherit;
+}
+.intb input[type="text"]:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+.intb input[type="text"]::placeholder {
+    color: #94A3B8;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+/* Кнопка "Сравнить" */
+.intb button {
+    background-color: #3CA1FF;
+    font-family: "SFPro Text Bold";
+    border: none;
+    border-radius: 10px;
+    padding: 10px 48px;
+    width: 187px;
+    height: 41px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    
+}
+
+.intb button:hover {
+    background-color: #0F2B44;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.intb button:active {
+    transform: translateY(1px);
+}
+.catalog-layout {
+    display: flex;
+    gap: 40px;
+    padding: 0 120px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+   /* Горизонтальные чекбоксы для типа и формата */
+   .type-buttons, .format-options, .additional-options{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+    /* ЛЕВАЯ ПАНЕЛЬ ФИЛЬТРОВ */
+    .left {
+        width: 320px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    .filter-section {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .filter-sectiont{
+        display: flex;
+        width: 273px;
+        height: 38px;
+        align-items: center;
+    }
+    .filter-label {
+        font-weight: 600;
+        font-size: 16px;
+        color: #1E1E1E;
+        letter-spacing: -0.2px;
+    }
+    .filter-section input{
+        background-color: #F9F9F9;
+    }
+    .direction-select, .subjects-box, .city-select, .format-select{
+        width: 273px;
+        height: 35px;
+        border: 1px solid #F0F0F0;
+        border-radius: 10px;
+        padding: 0 16px;
+        font-size: 14px;
+        background-color: #F9F9F9;
+    }
+    .score-input{
+        width: 116px;
+        height: 35px;
+        border: 1px solid #F0F0F0;
+        border-radius: 10px;
+        padding: 0 16px;
+        font-size: 14px;
+        background-color: #F9F9F9;
+    }
+
+
+
+ /* Сетка карточек */
+ .cards-grid {
+    max-width: 1300px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    margin: 0 auto;
+}
+
+/* Карточка */
+.card {
+    display: flex;
+    width: 437px;
+    height: 502px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.03);
+    flex-direction: column;
+}
+.card img{
+    display: block;
+    width: 413px;
+    height: 280px;
+    border-radius: 16px;
+    margin: 0 auto;
+    padding-top: 2%;
+}
+.card-content{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card-content h1{
+    font-family: "SFPro Text medium";
+    font-size: 18px;
+}
+.card-content p{
+    color: #5E5E5E;
+}
+
+.card button{
+    width: 80px;
+    height: 29px;
+    background-color: #F3F9FF;
+    color: #3CA1FF;
+    border: 1px solid #3CA1FF;
+    border-radius: 8px;
+}
+.bst {
+    display: flex;
+    align-items: center; /* выравнивание по вертикали */
+    gap: 60px; /* расстояние между кнопками и картинкой */
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.onq h1{
+    font-family: "SFPro display Black";
+    font-size: 55px;
+    text-transform: uppercase;
+}
+.onq p{
+    font-family: "SFPro Text medium";
+    width: 784px;
+    height: 60px;
+}
+.profession{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 3%;
+}
+.profession h1{
+    font-family: "SF Pro Text  display Bold";
+    color: #2868A3;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+.carddd{
+    display: flex;
+    gap: 24px;
+}
+
+.profession1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 3%;
+    max-width: 1920px;
+    margin: 0 auto;
+    gap: 24px;
+}
+
+.profession1 h1 {
+    font-family: "SF Pro Text  display Bold";
+    color: #2868A3;
+    font-size: 48px;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+    flex: 1;
+}
+
+/* Стили для кнопки "Смотреть больше" внутри profession1 */
+.profession1 .container {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.cards-grido{
+    padding-left: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    gap: 24px;
+}
+.cards-grido h1{
+    font-family: "SFPro Text medium";
+    font-size: 18px; 
+    width: 544px;
+}
+.productСard{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.productСard img{
+    width: 544px;
+    height: 280px;
+    border-radius: 16px;
+}
+.productСard p{
+    width: 544px;
+    color: #707070;
+}
+
+.date{
+    display: flex;
+    gap: 28px;
+
+}
+.date p{
+    display: flex;
+    font-family: "SFPro Text medium";
+    color: #3CA1FF;
+    font-size: 16px;
+    width: auto; /* или любое другое значение */
+}
+
+.quastions{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+    padding-bottom: 7%;
+}
+.quastion{
+    display: flex;
+    gap: 36px;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: #F0F0F0;
+    padding: 36px 0px;
+}
+.quastion  h1{
+    font-size: 20px;
+}
+.quastion p{
+    font-size: 16px;
+    color: #707070;
+    width: 1624px;
+    height: 44px;
+}
+.quastion img{
+    padding-bottom: 5%;
+}
+.t{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.t h1{
+    color: #F3F9FF;
+    font-family: "SF Pro Text  display Bold";
+    font-size: 24px;
+}
+.t p{
+    font-family: "SFProText-Regular";
+    color: #F3F9FF;
+    font-size: 16px;
+    width: 710px;
+}
+.y{
+    color: #F3F9FF;
+    font-size: 16px;
+    width: 710px;
+    font-family: "SFPro Text Bold";
+}
+.ri h1{
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: "SF Pro Text  display Bold";
+}
+
+/*event*/
+.container p{
+    font-family: "SFPro Text medium";
+    color: #5E5E5E;
+}
+.pq {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3%;
+    max-width: 1920px;
+    margin: 0 auto;
+    gap: 53%;
+}
+
+.pq h1 {
+    color: #1E1E1E;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.c {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.svgbut p{
+    font-family: "SFPro Text medium"; 
+}
+
+.w{
+    display: flex;
+    gap: 16px;
+    
+}
+.w h1{
+    font-family: "SFPro Text medium";
+    font-size: 18px;
+}
+.wa{
+    display: flex;
+    gap: 24px;
+}
+.wt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.wi{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+/* блог*/
+.ppp h1{
+    font-family: "SF Pro Text  display Bold";
+    font-size: 36px; 
+    margin: 0 0 20px 0; 
+    color: #FFFFFF;
+    text-transform: uppercase;
+    gap: 16px;
+}
+
+.ppp p{
+    font-family: "SFPro Text medium";
+    font-size: 18px; 
+    margin: 0 0 20px 0; 
+    color: #FFFFFF;
+    gap: 16px;
+}
+
+
+@font-face {
+    font-family: "SFPro Text medium";
+    src: url(./font/SFProText-Medium.ttf);
+}
+    
+@font-face {
+    font-family: "SF Pro Text  display Bold";
+    src: url(./font/SF-Pro-Display-Bold.otf);
+}
+
+    
+@font-face {
+    font-family: "SFPro Text Bold";
+    src: url(./font/SFProText-Bold.ttf);
+}
+@font-face {
+    font-family: "SFPro display Black";
+    src: url(./font/SF-Pro-Display-Black.otf);
+}
+@font-face {
+    font-family: "SFProText-Regular";
+    src: url(./font/SFProText-Regular.ttf);
+}
