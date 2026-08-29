@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль | ВокFlow</title>
+    <style>
+    @font-face {
+        font-family: "Dela Gothic One";
+        src: url(./fonts/DelaGothicOne-Regular.ttf);
+    }
+
+    
+    @font-face {
+        font-family: "Mulish";
+        src: url(./fonts/Mulish.ttf);
+    }
+    @font-face {
+        font-family: "Roboto";
+        src: url(./fonts/Roboto.ttf);
+    }     
+    </style>
+</head>
+<body style="background-color: #FFE9D5; margin: 0; font-family: system-ui, -apple-system, sans-serif;">
+
+       <div style="width: auto; position: fixed; top: 0; left: 0; height: 100vh; padding: 73px 20px; display: flex; flex-direction: column;
+            justify-content: space-between; background-color: #FFE9D5; box-sizing: border-box;">
+            <!-- Верхняя часть с логотипом и меню -->
+            <div style="display: flex; flex-direction: column; gap: 96px;">
+                
+                <!-- Логотип -->
+                <div style="padding-left: 8px;">
+                    <a href="./main.html">
+                        <img src="./img/Vector2.png" alt="ВокFlow" style="max-width: 100%;">
+                    </a>
+                </div>
+                <!-- Навигационное меню -->
+                <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500; background-color: #FFE2C8; border-left: 4px solid var(--orange-300, #FDB373);">Личный кабинет</li>
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500;"
+                        onmouseover="this.style.backgroundColor='#FFE2C8'"
+                        onmouseout="this.style.backgroundColor='transparent'">
+                        <a href="mylibrary.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 100%;">
+                            Моя библиотека
+                        </a>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500;"
+                        onmouseover="this.style.backgroundColor='#FFE2C8'"
+                        onmouseout="this.style.backgroundColor='transparent'">
+                        <a href="achievement.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 100%;">
+                            Достижения
+                        </a>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500;"
+                        onmouseover="this.style.backgroundColor='#FFE2C8'"
+                        onmouseout="this.style.backgroundColor='transparent'">
+                        <a href="discussions.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 100%;">
+                            Обсуждения
+                        </a>
+                    </li>
+                    <!-- Добавлен отступ 20px перед "Настройки" -->
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500; margin-top: 20px;"
+                        onmouseover="this.style.backgroundColor='#FFE2C8'"
+                        onmouseout="this.style.backgroundColor='transparent'">
+                         <a href="settings.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 100%;">
+                            Настройки
+                        </a>
+                        </li>
+                </ul>
+            </div>
+
+            <!-- Нижняя часть с выходом -->
+            <div style="margin-top: 40px; padding-top: 20px;">
+                <a href="index.html" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500; text-decoration: none; "
+                   onmouseover="this.style.backgroundColor='#FFE2C8'" 
+                   onmouseout="this.style.backgroundColor='transparent'">
+                    Выйти из портала библиотеки
+                </a>
+            </div>
+        </div>
+
+        <div class="main-container" style="margin-left: 280px; flex: 1; padding: 24px; box-sizing: border-box;">
+            <!-- Белый контейнер -->
+            <div class="container" style="background-color: #FFFFFF ; width: 100%; min-height: 1245px; padding: 64px 80px; border-radius: 36px; display: flex; flex-direction: column; gap: 64px; box-sizing: border-box;">
+                
+                <div style=" height: 200px; background: #EFEFFB url('img/profile/profile.png') left 71%/cover ; border-radius: 36px; padding: 40px 60px; display: flex; align-items: center; justify-content: space-between; color: white;">
+                    <!-- Левая часть с текстом -->
+                    <div style="flex: 1; color: #595880;">
+                        <h2 style="font-family: 'Mulish', sans-serif; font-size: 36px; font-weight: bold; margin: 0 0 16px 0; line-height: 1.2;">
+                            Добро пожаловать, Юна 
+                        </h2>
+                        <p style="font-family: 'Mulish', sans-serif; font-size: 28px; margin: 0; line-height: 1.5; opacity: 0.9;">
+                            Сегодня отличный день для новой главы
+                        </p>
+                    </div>
+                </div>
+
+                <div  class="one" style="display: flex; gap: 20px;">
+                    <div class="two" style="display: flex; width: 405px; height: 73px; padding: 1px 24px; background-color: #F2F2FF; border-radius: 8px; gap: 20px; border: 2px solid #E0E0F9; align-items: center;">
+                        <h1 style="color: #7878B3; margin: 0;">3</h1>
+                        <div style="flex: 1;">
+                            <p style="color: #353459; margin: 0; font-weight: 400; font-family: 'Mulish', sans-serif;">текущий уровень</p>
+                            <p style="color: #6B6B6B; margin: 4px 0 0 0; font-size: 14px; font-family: 'Mulish', sans-serif;">До следующего уровня осталось 340 очков опыта</p>
+                        </div>
+                    </div>
+                    <div class="two" style="display: flex; width: 405px; height: 73px; padding: 1px 24px; background-color: #F8F8FE; border-radius: 8px; gap: 20px; border: 2px solid #E0E0F9; align-items: center;">
+                        <h1 style="color: #7878B3; margin: 0; font-family: 'Mulish', sans-serif;">76</h1>
+                        <div style="flex: 1;">
+                            <p style="color: #353459; margin: 0; font-weight: 400; font-family: 'Mulish', sans-serif;">дней подряд заходили на BookFlow</p>
+                        </div>
+                    </div>
+
+                    <div class="two" style="display: flex; width: 405px; height: 73px; padding: 1px 24px; background-color: #F8F8FE; border-radius: 8px; gap: 20px; border: 2px solid #E0E0F9; align-items: center;">
+                        <h1 style="color: #7878B3; margin: 0; font-family: 'Mulish', sans-serif;">48</h1>
+                        <div style="flex: 1;">
+                            <p style="color: #353459; margin: 0; font-weight: 400; font-family: 'Mulish', sans-serif;">книг прочитано в этом году</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reading">
+                    <h1 style="font-size: 24px; color: #7878B3; font-family: 'Mulish', sans-serif;   margin: 0 0 64px 0;">Продолжить чтение</h1>
+                    <div class="four" style="display: flex; gap: 24px;">
+                        <div class="an" style="background-color: #F0F0F0; width: 383px; height: 108px; border-radius: 8px; display: flex; align-items: center; padding: 16px 32px; box-sizing: border-box;">
+                            
+                            <!-- Левая часть с изображением -->
+                            <div class="left" style="flex-shrink: 0;">
+                                <img src="./img/book5/3.png" alt="Маленький принц" style="width: 90px; height: 120px; border-radius: 4px; display: block; margin-top: -54px;">
+                            </div>
+                    
+                            <!-- Правая часть с текстом -->
+                            <div style="margin-left: 16px; font-family: Mulish, sans-serif; line-height: 1.4;">
+                                <div style="font-size: 18px; color: #000;">Маленький принц</div>
+                                <div style="font-size: 16px; color: #555;">Антуан де Сент-Экзюпери</div>
+                                <div style="font-size: 12px; color: #888; margin-top: 4px;">Прочитано: 64 / 112 страниц</div>
+                            </div>
+                    
+                        </div>
+                        <div class="an" style="background-color: #F0F0F0; width: 383px; height: 108px; border-radius: 8px; display: flex; align-items: center; padding: 16px 32px; box-sizing: border-box;">
+                            
+                            <!-- Левая часть с изображением -->
+                            <div class="left" style="flex-shrink: 0;">
+                                <img src="./img/books/books.ev.png" alt="Евгений Онегин" style="width: 90px; height: 120px; border-radius: 4px; display: block; margin-top: -54px;">
+                            </div>
+                    
+                            <!-- Правая часть с текстом -->
+                            <div style="margin-left: 16px; font-family: Mulish, sans-serif; line-height: 1.4;">
+                                <div style="font-size: 18px; color: #000;">Евгений Онегин</div>
+                                <div style="font-size: 16px; color: #555;">Александр Пушкин</div>
+                                <div style="font-size: 12px; color: #888; margin-top: 4px;">Прочитано: 64 / 112 страниц</div>
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

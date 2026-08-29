@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Войдитепж</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .content-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+        }
+        
+        .text-content {
+            text-align: center;
+            color: white;
+            margin-bottom: 80px; 
+            max-width: 880px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px; /* Отступ между всеми дочерними элементами */
+
+        }
+        
+        .subtitle {
+            font-family: 'Mulish', sans-serif;
+            font-size: 40px;
+            line-height: 1; /* эквивалент 100% */
+            letter-spacing: normal;
+            text-align: center;
+        }
+        
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            width: 880px;
+            justify-content: center;
+        }
+        
+        .button {
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 8px;
+            border-radius: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 400px;
+            height: 47px;
+            text-decoration: none; /* Убираем подчеркивание */
+            color: inherit; /* Наследуем цвет текста */
+        }
+        
+        .button-primary {
+            background-color: #FFFAF6;
+            color: #FDB373;
+        }
+        
+        .button-primary:hover {
+            background-color: #F0F0F0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./img/one.png" alt="Background" class="background-image">
+        
+        <div class="content-overlay">
+            <div class="text-content">
+                <img src="./img/Vector.png" alt="">
+                <p class="subtitle">Открой волшебный мир книг</p>
+            </div>
+            
+            <div class="buttons-container">
+                <a href="./reg.html" class="button button-primary">Зарегистрироваться</a>
+                <a href="./auto.html" class="button button-primary">Войти в аккаунт</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

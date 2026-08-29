@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная литература</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+       
+        body {
+            font-family: sans-serif;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .heroCont {
+            width: 100%;
+            height: 104px;
+            background-color: #FFFAF6;
+            padding: 40px 120px;
+            position: relative;
+        }
+        
+        .heroCont::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #595880;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header img {
+            width: auto;
+            height: 40px;
+            object-fit: contain;
+        }
+        
+
+        .nav-menu {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: #7878B3;
+        }
+        
+                
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 0 0 auto;
+        }
+        
+        .search-input {
+            width: 280px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #E0E0E0;
+            border-radius: 20px;
+            padding: 0 16px;
+            background-color: white;
+        }
+        
+        .search-input input {
+            flex: 1;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding-right: 8px;
+            font-size: 14px;
+            background: transparent;
+        }
+        
+        .search-input img {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+        
+        .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @font-face {
+            font-family: "Mulish";
+            src: url(./fonts/Mulish.ttf);
+        }
+        
+        .nav-menu {
+            font-family: 'Mulish', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="heroCont">
+        <div class="header header-with-border">
+            <img src="./img/Vector2.png" alt="Logo" style="cursor: pointer;" onclick="window.location.href='main.html'">
+            <ul class="nav-menu">
+                <li><a href="categor.html">Подборки книг</a></li>
+                <li><a href="#" style="color: #FF9C46;">Учебная литература</a></li>
+                <li><a href="book.html">Случайная книга</a></li>
+                <li><a href="about.html">О проекте</a></li>
+            </ul>
+            <div class="header-right">
+                <div class="search-input">
+                    <input type="text" placeholder="Поиск">
+                    <img src="./img/p.svg" alt="Поиск">
+                </div>
+                <div class="avatar">
+                     <a href="./profile.html">
+                        <img src="./img/ava.png" alt="avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     <!-- Основной контейнер с отступами -->
+    <div class="container" style="background: #FFFAF6; padding: 16px 120px; ">
+        <!-- Секция "Учебные материалы" -->
+        <div style="width: 1680px; height: 240px; background: url('img/book3/fon.png') 30% 91%/cover; border-radius: 36px; padding: 40px 60px; display: flex; align-items: center; justify-content: space-between; margin: 80px 0; color: white;">
+            <!-- Левая часть с текстом -->
+            <div style="flex: 1;">
+                <h2 style="font-family: 'Dela Gothic One', sans-serif; font-size: 36px; font-weight: 400; margin: 0 0 16px 0; line-height: 1.2;">
+                    Учебные материалы
+                </h2>
+                <p style="font-family: 'Mulish', sans-serif; font-size: 16px; margin: 0; line-height: 1.5; opacity: 0.9;">
+                    От классики школьной программы до мира будущих профессий. Все для учебы, экзаменов и саморазвития в одном месте
+                </p>
+            </div>
+        </div>
+            <!-- Блок "Литература 10 класса" -->
+        <div class="recomendationBlock">
+            <div class="title" style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="font-size: 36px; font-weight: Regular; color: #7878B3; font-family: 'Dela Gothic One', sans-serif;  margin: 0;">Литература 10 класса</h1>
+                <a href="#" style="color: #7878B3; font-size: 20px; font-weight: 500; text-decoration: none; font-family: Mulish, sans-serif; display: flex; align-items: center; gap: 8px;">
+                    Смотреть больше
+                    <span style="font-size: 24px;">→</span>
+                </a>
+            </div>
+                        
+            <!-- Книги по горизонтали -->
+            <div style="display: flex; overflow-x: auto; padding-bottom: 20px; gap: 20px;">
+              <!-- Книга 1 -->
+              <div style="width: 320px;">
+                <img src="./img/book3/books4.png" alt="Обломов" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Обломов</h3>
+                <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Иван Гончаров</p>
+                <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                </div>
+            </div>
+                
+                <!-- Книга 2 -->
+                <div style="width: 320px;">
+                    <img src="./img/book3/books3.png" alt="Отцы и дети" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Отцы и дети</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Иван Тургенев</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 3 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/1.png" alt="Кому на Руси жить хорошо" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Кому на Руси жить хорошо</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Николай Некрасов</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 4 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/2.png" alt="Война и мир" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Arial, sans-serif;">Война и мир</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Arial, sans-serif;">Лев Толстой</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 5 -->
+                <div style="width: 320px;">
+                    <img src="./img/books/books.prn.png" alt="Преступление и наказание" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Arial, sans-serif;">Преступление и наказание</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Arial, sans-serif;">Федор Достоевский</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+            </div>
+
+             
+            
+        </div>
+          <!-- Блок "Книги для подготовки к ЕГЭ" -->
+        <div class="recomendationBlock" id="ege" style="margin-top: 80px;">
+            <div class="title" style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="font-size: 36px; font-weight: Regular; color: #7878B3; font-family: 'Dela Gothic One', sans-serif;  margin: 0;">Книги для подготовки к ЕГЭ</h1>
+                <a href="#" style="color: #7878B3; font-size: 20px; font-weight: 500; text-decoration: none; font-family: Mulish, sans-serif; display: flex; align-items: center; gap: 8px;">
+                    Смотреть больше
+                    <span style="font-size: 24px;">→</span>
+                </a>
+            </div>
+                        
+            <!-- Книги Зарубежная классика -->
+            <div style="display: flex; overflow-x: auto; padding-bottom: 20px; gap: 20px;">
+              <!-- Книга 1 -->
+              <div style="width: 320px;">
+                <img src="./img/book4/3.png" alt="Литературные аргументы" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: bottom;">
+                <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Литературные аргументы</h3>
+                <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Ирина Заярная</p>
+                <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                </div>
+              </div>
+                
+                <!-- Книга 2 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/4.png" alt="Физика" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: center;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Физика</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Ирина Попова</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 3 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/5.png" alt="Биология" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: center;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Биология</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Татьяна Никитинская</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 4 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/6.png" alt="Обществознание: наглядно и доступно" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: center;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Arial, sans-serif;">Обществознание: наглядно и доступно</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Arial, sans-serif;">Ирина Крутова, Роман Пазин</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 5 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/7.png" alt="История" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: center;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">История</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Мария Селиверстова</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+            </div>
+
+             
+            
+        </div>
+
+    
+    </div>
+    <!-- Блок "Мир профессий" -->
+    <div class="recomendationBlock" id="mir"  style="background-color: #F0F0F0; width: 100%;">
+        <!-- Центрирование всего контента -->
+        <div style="display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%; padding: 60px;">
+            <div class="title" style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; width: 1700px;">
+                <h1 style="font-size: 36px; color: #7878B3; font-family: 'Dela Gothic One', sans-serif; margin: 0;">Мир профессий</h1>
+                <a href="#" style="color: #7878B3; font-size: 20px; font-weight: 500; text-decoration: none; font-family: Mulish, sans-serif; display: flex; align-items: center; gap: 8px;">
+                    Смотреть больше
+                    <span style="font-size: 24px;">→</span>
+                </a>
+            </div>
+                        
+            <!-- Мир профессий -->
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <div style="display: flex; overflow-x: auto; padding-bottom: 20px; gap: 20px; width: 1700px;">
+                    <!-- Книга 1 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/8.png" alt="Грокаем алгоритмы" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Грокаем алгоритмы</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Адитья Бхаргава</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #7878B3;">Программирование</span>
+                    </div>
+                </div>
+                  <!-- Книга 2 -->
+                  <div style="width: 320px;">
+                    <div style="width: 320px;">
+                        <img src="./img/book4/9.png" alt="Автор, ножницы, бумага." style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover;">
+                        <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Автор, ножницы, бумага.</h3>
+                        <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Николай Кононов</p>
+                        <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                            <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #7878B3;">Журналистика & Медиа</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Книга 3 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/10.png" alt="Моя жизнь. Мои достижения" style="width: 310px; height: 310px; border-radius: 20px; object-fit: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;"> Моя жизнь. Мои достижения</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Генри Форд</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #7878B3;">Бизнес & Инженерия</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 4 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/11.png" alt="Дизайн. Книга для недизайнеров" style="width: 310px; height: 310px; border-radius: 20px; object-fit: center;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Дизайн. Книга для недизайнеров</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Робин Уильямс</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #7878B3;">Дизайн & Архитектура</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 5 -->
+                <div style="width: 320px;">
+                    <img src="./img/book4/12.png" alt="Язык как инстинкт" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Язык как инстинкт</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Стивен Пинкер</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #7878B3;">Бизнес & Инженерия</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+        </div>
+        </div>
+    </div>
+
+   <!-- Блок "Дополни образовательную программу" -->
+<div class="recomendationBlock" style="width: 100%; background-color: #FFFAF6;">
+    <!-- Центрирование всего контента -->
+    <div style="display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%; padding: 7%;">
+        <div class="title" style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; width: 1700px;">
+            <h1 style="font-size: 36px; color: #7878B3; font-family: 'Dela Gothic One', sans-serif; margin: 0; padding-left: 10px;">Дополни образовательную программу</h1>
+            <a href="#" style="color: #7878B3; font-size: 20px; font-weight: 500; text-decoration: none; font-family: Mulish, sans-serif; display: flex; align-items: center; gap: 8px;">
+                Курсы, лекции и тренажёры от ведущих вузов и экспертов
+            </a>
+        </div>
+                    
+        <div style="display: flex; justify-content: flex-start; width: 100%; margin-right: 90px;">
+            <div style="max-width: 1680px; display: flex; padding: 20px; gap: 7%; width: 100%; ">
+                <!--  1 -->
+                <div style="width: 320px; flex-shrink: 0;">
+                    <a href="https://resh.edu.ru/" target="_blank">
+                        <img src="./img/book4/categoryCard1.png" alt="Школа" style="width: 405px; height: 240px; border-radius: 24px;">
+                    </a>
+                </div>
+                <!--  2 -->
+                <div style="width: 320px; flex-shrink: 0;">
+                    <a href="https://openedu.ru/" target="_blank">
+                        <img src="./img/book4/categoryCard 2.png" alt="Открытое образование" style="width: 405px; height: 240px; object-fit: cover;">
+                    </a>
+                </div>
+                
+                <!--  3 -->
+                <div style="width: 320px; flex-shrink: 0;">
+                    <a href="https://interneturok.ru/" target="_blank">
+                        <img src="./img/book4/categoryCard 3.png" alt="Урок" style="width: 405px; height: 240px; object-fit: cover;">
+                    </a>
+                </div>
+                
+                <!--  4 -->
+                <div style="width: 320px; flex-shrink: 0;">
+                    <a href="" target="_blank">
+                        <img src="./img/book4/categoryCard 4.png" alt="Репетитор" style="width: 405px; height: 240px; object-fit: cover;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="footer" style="color: #222222; background-color: #222222; padding: 60px 0; font-family: Arial, sans-serif;">
+        <div style="max-width: 1500px; margin: 0 auto; padding: 0 20px; display: flex; flex-direction: column; align-items: center;">
+            
+            <!-- Верхняя часть футера -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; width: 100%;">
+                
+                <!-- Логотип и слоган -->
+                <div style="flex: 1; max-width: 300px;">
+                    <a href="./main.html"> <img src="./img/Vector2.png" alt="BOKFlow Logo" style="height: 40px; margin-bottom: 20px;"></a>
+                    <p style="color: #FFE9D5; font-size: 16px; margin: 0; font-family: 'Mulish', sans-serif;">Волшебство начинается здесь</p>
+                </div>
+    
+                <!-- Колонки ссылок -->
+                <div style="display: flex; flex: 2; justify-content: space-around; max-width: 800px; gap: 60px;">
+                    
+                    <!-- Колонка 1 -->
+                    <div style="flex: 1;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <a href="categor.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Подборки книг</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="main.html#recommendations" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Рекомендации</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="book.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Случайная книга</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Колонка 2 -->
+                    <div style="flex: 1;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <a href="studing.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Учебная литература</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="studing.html#ege" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Подготовка к ОГЭ/ЕГЭ</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="studing.html#mir" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Мир профессий через книги</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Колонка 3 -->
+                    <div style="flex: 1;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <a href="about.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">О проекте</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="about.html#sp" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Служба поддержки</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="#" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Политика обработки персональных данных</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                </div>
+                
+                <!-- Аватарка -->
+                <div style="flex: 1; max-width: 100px; display: flex; justify-content: flex-end;">
+                   <a href="./profile.html">
+                        <img src="./img/ava.png" alt="avatar" style="width: 76px; height: 76px;">
+                    </a>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</body>
+</html>

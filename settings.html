@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки | ВокFlow</title>
+    <style>
+        
+    @font-face {
+        font-family: "Dela Gothic One";
+        src: url(./fonts/DelaGothicOne-Regular.ttf);
+    }
+
+    
+    @font-face {
+        font-family: "Mulish";
+        src: url(./fonts/Mulish.ttf);
+    }
+    @font-face {
+        font-family: "Roboto";
+        src: url(./fonts/Roboto.ttf);
+    }     
+    </style>
+</head>
+<body style="background-color: #FFE9D5; margin: 0; font-family: system-ui, -apple-system, sans-serif;">
+
+       <div style="width: auto; position: fixed; top: 0; left: 0; height: 100vh; padding: 73px 20px; display: flex; flex-direction: column;
+            justify-content: space-between; background-color: #FFE9D5; box-sizing: border-box;">
+            <!-- Верхняя часть с логотипом и меню -->
+            <div style="display: flex; flex-direction: column; gap: 96px;">
+                
+                <!-- Логотип -->
+                <div style="padding-left: 8px;">
+                    <a href="./main.html">
+                        <img src="./img/Vector2.png" alt="ВокFlow" style="max-width: 100%;">
+                    </a>
+                </div>
+                <!-- Навигационное меню -->
+                <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500;"
+                    onmouseover="this.style.backgroundColor='#FFE2C8'"
+                    onmouseout="this.style.backgroundColor='transparent'">
+                    <a href="profile.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 100%;">
+                        Личный кабинет
+                    </a>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500;"
+                        onmouseover="this.style.backgroundColor='#FFE2C8'"
+                        onmouseout="this.style.backgroundColor='transparent'">
+                        <a href="mylibrary.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 100%;">
+                            Моя библиотека
+                        </a>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500;"
+                        onmouseover="this.style.backgroundColor='#FFE2C8'"
+                        onmouseout="this.style.backgroundColor='transparent'">
+                        <a href="achievement.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 100%;">
+                            Достижения
+                        </a>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500;"
+                        onmouseover="this.style.backgroundColor='#FFE2C8'"
+                        onmouseout="this.style.backgroundColor='transparent'">
+                        <a href="discussions.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 100%;">
+                            Обсуждения
+                        </a>
+                    </li>
+                    <!-- Добавлен отступ 20px перед "Настройки" -->
+                    <li style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500; background-color: #FFE2C8; border-left: 4px solid var(--orange-300, #FDB373);">Настройки</li>
+                </ul>
+            </div>
+
+            <!-- Нижняя часть с выходом -->
+            <div style="margin-top: 40px; padding-top: 20px;">
+                <a href="index.html" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #595880; font-size: 16px; font-weight: 500; text-decoration: none; "
+                   onmouseover="this.style.backgroundColor='#FFE2C8'" 
+                   onmouseout="this.style.backgroundColor='transparent'">
+                    Выйти из портала библиотеки
+                </a>
+            </div>
+        </div>
+
+        <div class="main-container" style="margin-left: 280px; flex: 1; padding: 24px; box-sizing: border-box;">
+            <!-- Белый контейнер -->
+            <div class="container" style="background-color: #FFFFFF ; width: 100%; min-height: 1245px; padding: 64px 80px; border-radius: 36px; display: flex; flex-direction: column; gap: 64px; box-sizing: border-box;">
+                <h1 style="font-size: 36px; color: #7878B3; font-family: 'Dela Gothic One', sans-serif;  margin: 0;">Настройки</h1>
+
+                <!-- Основная информация секция -->
+                <div id="basic-info-section">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <h1 style="color: #7878B3; font-family: 'Mulish'; font-size: 24px; font-weight: 600; margin: 0;">
+                                Основная информация
+                            </h1>
+                            <p style="color: #A2A0A0; font-size: 14px; margin: 0;">
+                                Данная информация видна только вам и администраторам
+                            </p>
+                        </div>
+                        <a href="#" id="edit-basic-btn" style="color: #7878B3; font-size: 18px; font-weight: 500; text-decoration: none; font-family: Mulish, sans-serif; line-height: 1; display: flex; align-items: center;">
+                            Изменить
+                            <span style="font-size: 18px; margin-left: 4px;">→</span>
+                        </a>
+                    </div>
+
+                    <div class="input-grid" style="display: grid; gap: 16px;">
+                        <div class="one" style="display: flex; gap: 13%; min-width: 1256px;">
+                            <!-- Фамилия -->
+                            <div style="display: flex; flex-direction: column; gap: 8px; width: 620px;">
+                                <label for="surname" style="font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; color: #6B6B6B; margin-left: 5px;">Фамилия</label>
+                                <input type="text" id="surname" name="surname" value="Иванова" placeholder="Фамилия" disabled style="background-color: #f8fafd; border: 1px solid #d9e2ef; border-radius: 16px; padding: 14px 18px; font-size: 1rem; color: #1d2f44; outline: none; box-shadow: inset 2px 2px 5px rgba(194, 211, 234, 0.3), inset -3px -3px 5px #ffffff; width: 100%; box-sizing: border-box;">
+                            </div>
+
+                            <!-- Имя -->
+                            <div style="display: flex; flex-direction: column; gap: 8px; width: 620px;">
+                                <label for="name" style="font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; color: #6B6B6B; margin-left: 5px;">Имя</label>
+                                <input type="text" id="name" name="name" value="Юнона" placeholder="Имя" disabled style="background-color: #f8fafd; border: 1px solid #d9e2ef; border-radius: 16px; padding: 14px 18px; font-size: 1rem; color: #1d2f44; outline: none; box-shadow: inset 2px 2px 5px rgba(194, 211, 234, 0.3), inset -3px -3px 5px #ffffff; width: 100%; box-sizing: border-box;">
+                            </div>
+                        </div>
+                        <div class="one" style="display: flex; gap: 13%; min-width: 1256px;">
+                             <!-- Класс -->
+                             <div style="display: flex; flex-direction: column; gap: 8px;  width: 620px;">
+                                <label for="class" style="font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; color: #6B6B6B; margin-left: 5px;">Класс</label>
+                                <input type="text" id="class" name="class" value="10" placeholder="10" disabled style="background-color: #f8fafd; border: 1px solid #d9e2ef; border-radius: 16px; padding: 14px 18px; font-size: 1rem; color: #1d2f44; outline: none; box-shadow: inset 2px 2px 5px rgba(194, 211, 234, 0.3), inset -3px -3px 5px #ffffff; width: 100%; box-sizing: border-box;">
+                            </div>
+
+                            <!-- Возраст -->
+                            <div style="display: flex; flex-direction: column; gap: 8px;  width: 620px;">
+                                <label for="age" style="font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; color: #6B6B6B; margin-left: 5px;">Возраст</label>
+                                <input type="text" id="age" name="age" value="16" placeholder="16" disabled style="background-color: #f8fafd; border: 1px solid #d9e2ef; border-radius: 16px; padding: 14px 18px; font-size: 1rem; color: #1d2f44; outline: none; box-shadow: inset 2px 2px 5px rgba(194, 211, 234, 0.3), inset -3px -3px 5px #ffffff; width: 100%; box-sizing: border-box;">
+                            </div>
+                        </div>
+                        <div class="one" style="display: flex; gap: 13%; min-width: 1256px;">
+                            <!-- Email -->
+                            <div style="display: flex; flex-direction: column; gap: 8px; width: 620px;">
+                                <label for="email" style="font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; color: #6B6B6B; margin-left: 5px;">Email</label>
+                                <input type="email" id="email" name="email" value="una@mail.ru" placeholder="una@mail.ru" disabled style="background-color: #f8fafd; border: 1px solid #d9e2ef; border-radius: 16px; padding: 14px 18px; font-size: 1rem; color: #1d2f44; outline: none; box-shadow: inset 2px 2px 5px rgba(194, 211, 234, 0.3), inset -3px -3px 5px #ffffff; width: 100%; box-sizing: border-box;">
+                            </div>
+
+
+                           <!-- Телефон -->
+                           <div style="display: flex; flex-direction: column; gap: 8px;  width: 620px;">
+                            <label for="phone" style="font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; color: #6B6B6B; margin-left: 5px;">Телефон</label>
+                            <input type="tel" id="phone" name="phone" value="8 (945) 888 - 33 - 12" placeholder="8 (945) 888 - 33 - 12" disabled style="background-color: #f8fafd; border: 1px solid #d9e2ef; border-radius: 16px; padding: 14px 18px; font-size: 1rem; color: #1d2f44; outline: none; box-shadow: inset 2px 2px 5px rgba(194, 211, 234, 0.3), inset -3px -3px 5px #ffffff; width: 100%; box-sizing: border-box;">
+                           </div>
+                       </div>
+
+                            <!-- Пароль (звёздочки) -->
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="password" style="font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; color: #6B6B6B; margin-left: 5px;">Пароль</label>
+                                <input type="text" id="password" name="password" value="*********" placeholder="*********" disabled style="background-color: #f8fafd; border: 1px solid #d9e2ef; border-radius: 16px; padding: 14px 18px; font-size: 1rem; color: #1d2f44; outline: none; box-shadow: inset 2px 2px 5px rgba(194, 211, 234, 0.3), inset -3px -3px 5px #ffffff; font-family: 'Courier New', monospace; letter-spacing: 2px; width: 100%; box-sizing: border-box;">
+                            </div>
+                    </div>
+                    <!-- Контейнер для кнопки сохранения (будет показываться при редактировании) -->
+                    <div id="basic-save-container" style="display: none; margin-top: 24px; width: 100%;">
+                        <button id="save-basic-btn" style="background-color: #9D9DDA; color: white; border: none; border-radius: 12px; padding: 14px 32px; font-family: 'Mulish', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; width: auto; min-width: 200px;">Сохранить изменения</button>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <h1 style="color: #7878B3; font-family: 'Mulish'; font-size: 24px; font-weight: 600; margin: 0;">
+                            Изображение профиля
+                        </h1>
+                        <div class="prfanatar" style="display: flex; gap: 24px;">
+                            <img src="./img/prfavatar/ava1.png" alt="" style="width: 80px;">
+                            <img src="./img/prfavatar/ava2.png" alt="" style="width: 80px;">
+                            <img src="./img/prfavatar/ava3.png" alt="" style="width: 80px;">
+                            <img src="./img/prfavatar/ava4.png" alt="" style="width: 80px;">
+                            <img src="./img/prfavatar/ava5.png" alt="" style="width: 80px; border: 2px solid #7878B3; border-radius: 100%;">
+                            <img src="./img/prfavatar/ava6.png" alt="" style="width: 80px;">
+                            <img src="./img/prfavatar/ava7.png" alt="" style="width: 80px;">
+                            <img src="./img/prfavatar/ava8.png" alt="" style="width: 80px;">
+                            <img src="./img/prfavatar/ava9.png" alt="" style="width: 80px;">
+                            <img src="./img/prfavatar/ava10.png" alt="" style="width: 80px;">
+                            <img src="./img/prfavatar/ava11.png" alt="" style="width: 80px;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Публичная информация секция -->
+                <div id="public-info-section">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <h1 style="color: #7878B3; font-family: 'Mulish'; font-size: 24px; font-weight: 600; margin: 0;">
+                                Публичная информация
+                            </h1>
+                            <p style="color: #A2A0A0; font-size: 14px; margin: 0;">
+                                Данная информация видна всем пользователям портала
+                            </p>
+                        </div>
+                        <a href="#" id="edit-public-btn" style="color: #7878B3; font-size: 18px; font-weight: 500; text-decoration: none; font-family: Mulish, sans-serif; line-height: 1; display: flex; align-items: center;">
+                            Изменить
+                            <span style="font-size: 18px; margin-left: 4px;">→</span>
+                        </a>
+                    </div>
+                    <div class="input-grid" style="display: grid; gap: 16px;">
+                        <!-- Имя -->
+                        <div style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+                            <label for="public_name" style="font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; color: #6B6B6B; margin-left: 5px;">Имя</label>
+                            <input type="text" id="public_name" name="public_name" value="Юна" placeholder="Имя" disabled style="background-color: #f8fafd; border: 1px solid #d9e2ef; border-radius: 16px; padding: 14px 18px; font-size: 1rem; color: #1d2f44; outline: none; box-shadow: inset 2px 2px 5px rgba(194, 211, 234, 0.3), inset -3px -3px 5px #ffffff; width: 100%; box-sizing: border-box;">
+                        </div>
+                    </div>
+                    <!-- Контейнер для кнопки сохранения публичной информации -->
+                    <div id="public-save-container" style="display: none; margin-top: 24px; width: 100%;">
+                        <button id="save-public-btn" style="background-color: #9D9DDA; color: white; border: none; border-radius: 12px; padding: 14px 32px; font-family: 'Mulish', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; width: auto; min-width: 200px;">Сохранить изменения</button>
+                    </div>
+                </div>
+
+                <div class="lp" style="display: flex; gap: 24px; align-items: center;">
+                    <label style="position: relative; display: inline-block; width: 56px; height: 28px; flex-shrink: 0;">
+                        <input type="checkbox" style="opacity: 0; width: 0; height: 0; margin: 0;" 
+                               onchange="this.nextElementSibling.style.backgroundColor = this.checked ? '#9D9DDA' : '#A2A0A0'; this.nextElementSibling.nextElementSibling.style.transform = this.checked ? 'translateX(22px)' : 'translateX(0)';">
+                        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #A2A0A0; transition: 0.3s; border-radius: 30px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);"></span>
+                        <span style="position: absolute; height: 28px; width: 28px; left: 1px; bottom: 1px; background-color: white; transition: 0.3s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);"></span>
+                    </label>
+                    <p style="color: #222222; font-size: 16px; font-family: Mulish, sans-serif; font-weight: 400; margin: 0; line-height: 1.4;">
+                        Показывать мой номер класса в отзывах и обсуждениях
+                    </p>
+                </div>
+
+                <div class="lp" style="display: flex; gap: 24px; align-items: center;">
+                    <label style="position: relative; display: inline-block; width: 56px; height: 28px; flex-shrink: 0;">
+                        <input type="checkbox" style="opacity: 0; width: 0; height: 0; margin: 0;" 
+                               onchange="this.nextElementSibling.style.backgroundColor = this.checked ? '#9D9DDA' : '#A2A0A0'; this.nextElementSibling.nextElementSibling.style.transform = this.checked ? 'translateX(22px)' : 'translateX(0)';">
+                        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #A2A0A0; transition: 0.3s; border-radius: 30px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);"></span>
+                        <span style="position: absolute; height: 28px; width: 28px; left: 1px; bottom: 1px; background-color: white; transition: 0.3s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);"></span>
+                    </label>
+                    <p style="color: #222222; font-size: 16px; font-family: Mulish, sans-serif; font-weight: 400; margin: 0; line-height: 1.4;">
+                        Участвовать в общем рейтинге читателей класса
+                    </p>
+                </div>
+
+                <h1 style="color: #7878B3; font-family: 'Mulish'; font-size: 24px; font-weight: 600; margin: 0;">
+                    Персонализация
+                </h1>
+
+                
+                <div class="lp" style="display: flex; gap: 24px; align-items: center;">
+                    <label style="position: relative; display: inline-block; width: 56px; height: 28px; flex-shrink: 0;">
+                        <input type="checkbox" style="opacity: 0; width: 0; height: 0; margin: 0;" 
+                               onchange="this.nextElementSibling.style.backgroundColor = this.checked ? '#9D9DDA' : '#A2A0A0'; this.nextElementSibling.nextElementSibling.style.transform = this.checked ? 'translateX(22px)' : 'translateX(0)';">
+                        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #A2A0A0; transition: 0.3s; border-radius: 30px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);"></span>
+                        <span style="position: absolute; height: 28px; width: 28px; left: 1px; bottom: 1px; background-color: white; transition: 0.3s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);"></span>
+                    </label>
+                    <p style="color: #222222; font-size: 16px; font-family: Mulish, sans-serif; font-weight: 400; margin: 0; line-height: 1.4;">
+                        Включить персонализированные рекомендации
+                    </p>
+                </div>
+
+                
+                <div class="lp" style="display: flex; gap: 24px; align-items: center;">
+                    <label style="position: relative; display: inline-block; width: 56px; height: 28px; flex-shrink: 0;">
+                        <input type="checkbox" style="opacity: 0; width: 0; height: 0; margin: 0;" 
+                               onchange="this.nextElementSibling.style.backgroundColor = this.checked ? '#9D9DDA' : '#A2A0A0'; this.nextElementSibling.nextElementSibling.style.transform = this.checked ? 'translateX(22px)' : 'translateX(0)';">
+                        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #A2A0A0; transition: 0.3s; border-radius: 30px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);"></span>
+                        <span style="position: absolute; height: 28px; width: 28px; left: 1px; bottom: 1px; background-color: white; transition: 0.3s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);"></span>
+                    </label>
+                    <p style="color: #222222; font-size: 16px; font-family: Mulish, sans-serif; font-weight: 400; margin: 0; line-height: 1.4;">
+                        Сохранять историю пользования порталом библиотеки
+                    </p>
+                </div>
+
+
+                <div class="checkbox-text" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <p style="color: #222222; font-size: 16px; font-family: Mulish, sans-serif; font-weight: 400; margin: 0; line-height: 1.4;">
+                        Тема личного кабинета:
+                    </p>
+                    
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: Mulish, sans-serif; font-size: 16px; color: #222222;">
+                        <input type="radio" name="theme" checked style="width: 18px; height: 18px; cursor: pointer; accent-color: #9D9DDA;"> 
+                        Светлая тема
+                    </label>
+                    
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: Mulish, sans-serif; font-size: 16px; color: #222222;">
+                        <input type="radio" name="theme" style="width: 18px; height: 18px; cursor: pointer; accent-color: #9D9DDA;"> 
+                        Темная тема
+                    </label>
+                </div>
+
+                <div class="with-border" style="  width: 100%; height: 0px; border: 1px solid #D4D4D4;"></div>
+                
+
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <h1 style="color: #7878B3; font-family: 'Mulish'; font-size: 24px; font-weight: 600; margin: 0;">
+                            Удаление аккаунта
+                        </h1>
+                        <p style="color: #A2A0A0; font-size: 14px; margin: 0;">
+                            Удалит ваш профиль, все списки, рецензии и историю. Информация о взятых книгах останется в библиотечной системе. Это действие нельзя отменить.
+                        </p>
+                    </div>
+                    <button style="width: 281px; height: 47px; font-family: 'Mulish'; border-radius: 12px; background-color: transparent; color: #7878B3; border-radius: 12px; border: 2px solid #7878B3; cursor: pointer;">Удалить аккаунт</button>
+                </div>
+
+            </div>
+        </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Элементы для основной информации
+            const basicSection = document.getElementById('basic-info-section');
+            const basicInputs = basicSection.querySelectorAll('input:not([type="checkbox"]):not([type="radio"])');
+            const editBasicBtn = document.getElementById('edit-basic-btn');
+            const basicSaveContainer = document.getElementById('basic-save-container');
+            
+            // Элементы для публичной информации
+            const publicSection = document.getElementById('public-info-section');
+            const publicInput = document.getElementById('public_name');
+            const editPublicBtn = document.getElementById('edit-public-btn');
+            const publicSaveContainer = document.getElementById('public-save-container');
+
+            // Функция для сохранения изменений основной информации
+            function saveBasicChanges() {
+                // Блокируем инпуты
+                basicInputs.forEach(input => {
+                    input.disabled = true;
+                });
+                
+                // Прячем кнопку сохранения
+                basicSaveContainer.style.display = 'none';
+                
+                // Показываем кнопку Изменить
+                editBasicBtn.style.display = 'flex';
+            }
+
+            // Функция для отмены редактирования (возврат к исходным значениям)
+            function cancelBasicEdit() {
+                // Здесь можно добавить логику сброса значений, если нужно
+                basicInputs.forEach(input => {
+                    input.disabled = true;
+                });
+                basicSaveContainer.style.display = 'none';
+                editBasicBtn.style.display = 'flex';
+            }
+
+            // Обработчик для кнопки Изменить (основная информация)
+            editBasicBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Разблокируем инпуты
+                basicInputs.forEach(input => {
+                    input.disabled = false;
+                });
+                
+                // Прячем кнопку Изменить
+                editBasicBtn.style.display = 'none';
+                
+                // Показываем кнопку сохранения
+                basicSaveContainer.style.display = 'block';
+            });
+
+            // Обработчик для кнопки Сохранить (основная информация)
+            document.getElementById('save-basic-btn').addEventListener('click', function() {
+                saveBasicChanges();
+                // Здесь можно добавить логику отправки данных на сервер
+                console.log('Сохранение основной информации:');
+                basicInputs.forEach(input => {
+                    console.log(`${input.id || input.name}: ${input.value}`);
+                });
+            });
+
+            // Функция для сохранения изменений публичной информации
+            function savePublicChanges() {
+                publicInput.disabled = true;
+                publicSaveContainer.style.display = 'none';
+                editPublicBtn.style.display = 'flex';
+            }
+
+            // Обработчик для кнопки Изменить (публичная информация)
+            editPublicBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                publicInput.disabled = false;
+                editPublicBtn.style.display = 'none';
+                publicSaveContainer.style.display = 'block';
+            });
+
+            // Обработчик для кнопки Сохранить (публичная информация)
+            document.getElementById('save-public-btn').addEventListener('click', function() {
+                savePublicChanges();
+                // Здесь можно добавить логику отправки данных на сервер
+                console.log('Сохранение публичной информации:', publicInput.value);
+            });
+
+            // Добавляем обработчик для кнопки Удалить аккаунт
+            const deleteBtn = document.querySelector('button[style*="Удалить аккаунт"]');
+            if (deleteBtn) {
+                deleteBtn.addEventListener('click', function() {
+                    if (confirm('Вы уверены, что хотите удалить аккаунт? Это действие нельзя отменить.')) {
+                        console.log('Аккаунт удален');
+                        // Здесь можно добавить логику удаления аккаунта
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

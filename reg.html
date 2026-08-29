@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./regauto.css">
+    <title>Регистрация | BookFlow</title>
+    <style>
+        @font-face {
+            font-family: "Dela Gothic One";
+            src: url(./fonts/DelaGothicOne-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: "Mulish";
+            src: url(./fonts/Mulish.ttf);
+        }
+    </style>
+</head>
+
+<body style="background-image: url('./img/regauto.png');  margin: 0; height: 100vh; display: flex;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; height: 100vh; padding: 40px; width: 50%;">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; width: 720px; height: 224px; gap: 16px; opacity: 1;">
+            <div style="flex-shrink: 0;">
+                <img src="./img/regavt.png" alt="">
+            </div>
+        </div>
+        <div class="containe1" style="font-family: 'Dela Gothic One'; width: 720px; height: 55%; gap: 16px; opacity: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left;">
+            <h1 style="font-family: 'Dela Gothic One'; font-weight: 400; font-style: normal; font-size: 56px; text-transform: uppercase; margin: 0; color: #FFFFFF;">
+                Открой волшебный мир
+            </h1>
+            <p style="font-family: 'Mulish'; font-weight: 500; font-style: normal; font-size: 18px; line-height: 100%; margin: 0; color: #FFFFFF; width: 80%;">
+                Создайте учётную запись, чтобы начать своё литературное путешествие. 
+                Весь BookFlow — в вашем распоряжении.
+            </p>
+        </div>
+        <div style="margin-top: 40px; width: 720px;">
+            <div class="buttons-container" style="width: 100%; height: 47px; display: flex; justify-content: space-between; opacity: 1; border-radius: 12px; border: 2px solid #FFFFFF;">
+                <button id="regBtn" style="font-family: 'Mulish'; width: 50%; padding: 12px 36px; border-radius: 12px; opacity: 1; background-color: #FFFFFF; border: none; box-sizing: border-box; color: #FF9C46; font-size: 18px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                    Регистрация
+                </button>
+                <button id="authBtn" style="font-family: 'Mulish'; width: 50%; padding: 12px 36px; border-radius: 12px; opacity: 1; background-color: transparent; border: none; box-sizing: border-box; color: #FFFFFF; font-size: 18px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                    Авторизация
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Правая часть -->
+    <div class="textCont" style="background-color: white; padding: 40px; border-top-left-radius: 76px; border-bottom-left-radius: 76px; width: 50%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h2 style="font-family: 'Dela Gothic One'; color: #7878B3; text-align: center; margin-bottom: 70px; font-size: 36px;">
+            РЕГИСТРАЦИЯ
+        </h2>
+        
+        <form id="registrationForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px;">
+            <div style="grid-column: span 1;">
+                <input type="text" id="lastName" placeholder="Фамилия" style="width: 390px; padding: 10px; border: 1px solid #F0F0F0; border-radius: 16px; font-family: 'Mulish';">
+            </div>
+            
+            <div style="grid-column: span 1;">
+                <input type="text" id="firstName" placeholder="Имя" style="width: 390px; padding: 10px; border: 1px solid #F0F0F0; border-radius: 16px; font-family: 'Mulish';">
+            </div>
+            
+            <div style="grid-column: span 2;">
+                <input type="email" id="email" placeholder="Email" style="width: 100%; padding: 10px; border: 1px solid #F0F0F0; border-radius: 16px; font-family: 'Mulish';">
+            </div>
+            <div style="grid-column: span 2;">
+                <input type="tel" id="phone" placeholder="Телефон" style="width: 100%; padding: 10px; border: 1px solid #F0F0F0; border-radius: 16px; font-family: 'Mulish';">
+            </div>
+            <div style="grid-column: span 2;">
+                <input type="password" id="password" placeholder="Пароль" style="width: 100%; padding: 10px; border: 1px solid #F0F0F0; border-radius: 16px; font-family: 'Mulish';">
+            </div>
+            <div style="grid-column: span 2;">
+                <input type="password" id="confirmPassword" placeholder="Повторите пароль" style="width: 100%; padding: 10px; border: 1px solid #F0F0F0; border-radius: 16px; font-family: 'Mulish';">
+            </div>
+            
+            <div style="grid-column: span 2;">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <label style="font-family: 'Mulish'; font-weight: bold; color: #7878B3; white-space: nowrap;">
+                        Пол:
+                    </label>
+                    <div style="display: flex; gap: 20px;">
+                        <label style="display: flex; align-items: center; gap: 5px; font-family: 'Mulish'; color: #6B6B6B;">
+                            <input type="radio" name="gender" value="male" id="genderMale"> Мужской
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 5px; font-family: 'Mulish'; color: #6B6B6B;">
+                            <input type="radio" name="gender" value="female" id="genderFemale"> Женский
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div style="grid-column: span 2;">
+                <input type="number" id="age" placeholder="Возраст" style="width: 100%; padding: 10px; border: 1px solid #F0F0F0; border-radius: 16px; font-family: 'Mulish';">
+            </div>
+        </form>
+        
+        <button id="submitBtn" style="margin-top: 70px; width: 800px; height: 47px; min-width: 250px; padding: 12px 64px; background-color: #7878B3; color: white; border: none; border-radius: 12px; font-family: 'Mulish'; font-size: 18px; cursor: pointer; box-sizing: border-box; opacity: 1;">
+            Зарегистрироваться
+        </button>
+        <p style="font-family: Mulish; font-weight: 400; font-style: normal; font-size: 14px; line-height: 100%; text-align: center; margin-top: 24px; max-width: 840px; color: #6B6B6B;">
+            Нажимая кнопку «Зарегистрироваться», Вы подтверждаете, что ознакомлены с Правилами пользования порталом библиотеки и даете согласие на обработку своих персональных данных 
+            в соответствии с Политикой конфиденциальности
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Получаем элементы формы
+            const registrationForm = document.getElementById('registrationForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const regBtn = document.getElementById('regBtn');
+            const authBtn = document.getElementById('authBtn');
+            
+            // Обработчик кнопки "Зарегистрироваться"
+            submitBtn.addEventListener('click', function(event) {
+                event.preventDefault(); // Предотвращаем стандартное поведение
+                
+                // Собираем данные формы
+                const formData = {
+                    lastName: document.getElementById('lastName').value,
+                    firstName: document.getElementById('firstName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    password: document.getElementById('password').value,
+                    confirmPassword: document.getElementById('confirmPassword').value,
+                    gender: document.querySelector('input[name="gender"]:checked')?.value || '',
+                    age: document.getElementById('age').value
+                };
+                
+                // Базовая валидация
+                if (!formData.lastName || !formData.firstName || !formData.email || 
+                    !formData.password || !formData.confirmPassword) {
+                    alert('Пожалуйста, заполните все обязательные поля');
+                    return;
+                }
+                
+                if (formData.password !== formData.confirmPassword) {
+                    alert('Пароли не совпадают');
+                    return;
+                }
+                
+                if (!formData.email.includes('@')) {
+                    alert('Введите корректный email');
+                    return;
+                }
+                
+                // Здесь можно добавить сохранение данных в localStorage или отправку на сервер
+                localStorage.setItem('userData', JSON.stringify(formData));
+                
+                // Переход на main.html
+                window.location.href = 'main.html';
+            });
+            
+            // Обработчик кнопки "Регистрация" (уже на странице регистрации)
+            regBtn.addEventListener('click', function() {
+                // Уже на странице регистрации, можно сделать кнопку активной
+                regBtn.style.backgroundColor = '#FFFFFF';
+                regBtn.style.color = '#FF9C46';
+                authBtn.style.backgroundColor = 'transparent';
+                authBtn.style.color = '#FFFFFF';
+                
+                // Если нужно перейти на страницу авторизации, замените на:
+                // window.location.href = 'login.html';
+            });
+            
+            // Обработчик кнопки "Авторизация"
+            authBtn.addEventListener('click', function() {
+                // Переход на страницу авторизации
+                window.location.href = 'auto.html';
+            });
+            
+            // Дополнительно: обработка Enter в форме
+            registrationForm.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    submitBtn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> О проекте</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: sans-serif;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .heroCont {
+            width: 100%;
+            height: 104px;
+            background-color: #FFFAF6;
+            padding: 40px 120px;
+            position: relative;
+        }
+        
+        .heroCont::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #595880;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header img {
+            width: auto;
+            height: 40px;
+            object-fit: contain;
+        }
+        
+
+        .nav-menu {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: #7878B3;
+        }
+        
+                
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 0 0 auto;
+        }
+        
+        .search-input {
+            width: 280px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #E0E0E0;
+            border-radius: 20px;
+            padding: 0 16px;
+            background-color: white;
+        }
+        
+        .search-input input {
+            flex: 1;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding-right: 8px;
+            font-size: 14px;
+            background: transparent;
+        }
+        
+        .search-input img {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+        
+        .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        
+        .nav-menu {
+            font-family: 'Mulish', sans-serif;
+        }
+
+
+        
+        .stats {
+            display: flex;
+            gap: 25px;
+            width: 772px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 16px;
+            width: 247px;
+            outline: 2px solid #9D9DDA;
+            transition: transform 0.3s ease; /* Плавная анимация */
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #9D9DDA;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #595880;
+            line-height: 1.4;
+            width: 98%;
+        }
+         .stat-item:hover {
+            transform: scale(1.05); /* Увеличение на 5% при наведении */
+        }
+        
+        @font-face {
+            font-family: "Dela Gothic One";
+            src: url(./fonts/DelaGothicOne-Regular.ttf);
+        }
+            
+        @font-face {
+            font-family: "Mulish";
+            src: url(./fonts/Mulish.ttf);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="heroCont">
+        <div class="header header-with-border">
+            <img src="./img/Vector2.png" alt="Logo" style="cursor: pointer;" onclick="window.location.href='main.html'">
+            <ul class="nav-menu">
+                <li><a href="categor.html">Подборки книг</a></li>
+                <li><a href="studing.html">Учебная литература</a></li>
+                <li><a href="book.html">Случайная книга</a></li>
+                <li><a href="#" style="color: #FF9C46;">О проекте</a></li>
+            </ul>
+            <div class="header-right">
+                <div class="search-input">
+                    <input type="text" placeholder="Поиск">
+                    <img src="./img/p.svg" alt="Поиск">
+                </div>
+                <div class="avatar">
+                     <a href="./profile.html">
+                        <img src="./img/ava.png" alt="avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Основной контейнер с отступами -->
+    <div class="container" style="background: #FFFAF6; padding: 16px 120px;">
+        <!-- Секция "Учебные материалы" -->
+        <div style="width: 1680px; height: 240px; background: url('img/book3/fon.png') 30% 91%/cover; border-radius: 36px; padding: 40px 60px; display: flex; align-items: center; justify-content: space-between; margin: 80px 0; color: white;">
+            <!-- Левая часть с текстом -->
+            <div style="flex: 1;">
+                <h2 style="font-family: 'Dela Gothic One', sans-serif; font-size: 36px; font-weight: 400; margin: 0 0 16px 0; line-height: 1.2;">
+                    BookFlow — больше, чем библиотека
+                </h2>
+                <p style="font-family: 'Mulish', sans-serif; font-size: 16px; margin: 0; line-height: 1.5; opacity: 0.9; width: 45%;">
+                    Добро пожаловать за кулисы нашего портала! Здесь мы расскажем о его создании, правилах и о том, как вы можете помочь ему стать лучше
+                </p>
+            </div>
+        </div>
+        
+        <div class="title" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; width: 1680px; padding-top: 60px;">
+            <div class="left" style="flex: 1; width: 828px;">
+                <h1 style="font-size: 20px; color: #7878B3; font-family: 'Dela Gothic One', sans-serif; margin-bottom: 16px;">
+                    Что такое BookFlow?
+                </h1>
+                <p style="color: #6B6B6B; margin: 0; font-size: 18px; font-family: Mulish, sans-serif; width: 91%;">
+                    BookFlow — это цифровое сердце и интерактивное лицо нашей школьной библиотеки. Наша миссия — превратить процесс поиска и чтения книг в увлекательное, 
+                    современное и социальное путешествие для каждого ученика и учителя. Это не просто электронный каталог, а живая экосистема, где книги находят своих читателей, 
+                    а идеи — единомышленников. Мы создаем пространство, которое вдохновляет на открытия, поддерживает учебный процесс и объединяет школьное сообщество вокруг чтения.
+                </p>
+            </div>
+            <div class="right" style="position: relative; top: 83px;">
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-label">электронных книг в портале</div>
+                        <div class="stat-number">5 000+</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Активных читателей в этом учебном году</div>
+                        <div class="stat-number">1 843</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Тематических подборок на разные вкусы</div>
+                        <div class="stat-number">100+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Правила пользования порталом -->
+        <div class="recomendationBlock">
+            <div class="title" style="margin: 60px 0; display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="font-size: 36px; font-weight: Regular; color: #7878B3; font-family: 'Dela Gothic One', sans-serif;  margin: 0;">Правила пользования порталом</h1>
+            </div>
+                        
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding-bottom: 20px; width: 405px ;">
+                <!-- Фото -->
+            
+                <img src="./img/about/1.png" alt="" style="width: 405px; height: 220px;">
+                
+                <!-- 2 -->
+                <div style=" border: 1px solid #ddd; padding: 36px 24px; border-radius: 20px; background-color: #F0F0F0; width: 405px; height: 220px; align-items: center; ">
+                    <h3 style="margin: 10px 0 12px 0; color: #595880; font-size: 20px;">Регистрация</h3>
+                    <p style="color: #353459; margin-bottom: 10px; font-size: 18px;">Доступ к веб-порталу возможен только для зарегистрированных пользователей — учеников и сотрудников школы</p>
+                </div>
+
+                <!-- 3 -->
+                <div style=" border: 1px solid #ddd; padding: 36px 24px; border-radius: 20px; background-color: #F0F0F0; width: 405px; height: 220px; align-items: center; ">
+                    <h3 style="margin: 10px 0 12px 0; color: #595880; font-size: 20px;">Данные аккаунта</h3>
+                    <p style="color: #353459; margin-bottom: 10px; font-size: 18px;">Запрещается передавать свои логин и пароль другим лицам. Вы несёте ответственность за все действия, совершённые под вашим аккаунтом</p>
+                </div>
+                
+                <!-- Фото -->
+                <img src="./img/about/2.png" alt="" style="width: 405px; height: 220px;">
+                            
+                <!-- 4 -->
+                <div style="border: 1px solid #ddd; padding: 36px 24px; border-radius: 20px; background-color: #F0F0F0; width: 405px; height: 220px; display: flex; align-items: flex-end;">
+                    <p style="color: #353459; margin-bottom: 10px; font-size: 18px;">При публикации рецензий, комментариев или предложений книг соблюдайте уважительный тон</p>
+                </div>
+
+                <!-- 5 -->
+                <div style="border: 1px solid #ddd; padding: 36px 24px; border-radius: 20px; background-color: #F0F0F0; width: 405px; height: 220px; display: flex; align-items: flex-end;">
+                    <p style="color: #353459; margin-bottom: 10px; font-size: 18px;">Запрещены оскорбления, спам, реклама и размещение материалов, нарушающих законодательство РФ</p>
+                </div>
+            <!-- Фото -->
+            <img src="./img/about/3.png" alt="" style="width: 405px; height: 220px;">
+
+                <!-- 5 -->
+                <div style="border: 1px solid #ddd; padding: 36px 24px; border-radius: 20px; background-color: #F0F0F0; width: 405px; height: 220px; display: flex; align-items: flex-end;">
+                    <p style="color: #353459; margin-bottom: 10px; font-size: 18px;">Администрация оставляет за собой право удалять комментарии, нарушающие правила</p>
+                </div>
+
+            <!-- 6 -->
+            <div style=" border: 1px solid #ddd; padding: 36px 24px; border-radius: 20px; background-color: #F0F0F0; width: 405px; height: 220px; align-items: center; ">
+                <h3 style="margin: 10px 0 12px 0; color: #595880; font-size: 20px;">Авторские права</h3>
+                <p style="color: #353459; margin-bottom: 10px; font-size: 18px;">Цитируйте книги правильно, указывая автора. Нельзя выкладывать полные тексты защищённых книг</p>
+            </div>
+            <!-- Фото -->
+            <img src="./img/about/4.png" alt="" style="width: 405px; height: 220px;">
+
+            <!-- 7 -->
+            <div style=" border: 1px solid #ddd; padding: 36px 24px; border-radius: 20px; background-color: #F0F0F0; width: 405px; height: 220px; align-items: center; ">
+                <h3 style="margin: 10px 0 12px 0; color: #595880; font-size: 20px;">Рекомендации</h3>
+                <p style="color: #353459; margin-bottom: 10px; font-size: 18px;">Ваши рекомендации формируются на основе вашей активности в портале. Историю просмотров можно очистить в настройках</p>
+            </div>
+
+            <!-- 8 -->
+            <div style=" border: 1px solid #ddd; padding: 36px 24px; border-radius: 20px; background-color: #F0F0F0; width: 405px; height: 220px; align-items: center; ">
+                <h3 style="margin: 10px 0 12px 0; color: #595880; font-size: 20px;">Технические вопросы</h3>
+                <p style="color: #353459; margin-bottom: 10px; font-size: 18px;">Портал работает 24/7, но возможны кратковременные сбои. Обнаружив серьёзную ошибку, сразу сообщите нам</p>
+            </div>
+            </div>    
+        </div>
+    
+
+        <div id="sp" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; box-sizing: border-box;">
+            <div class="form" style="background-color: #595880; max-width: 1680px; height: auto; min-height: 593px; border-radius: 24px; display: flex; padding: 56px 64px; box-sizing: border-box; gap: 100px;">
+                <div class="left" style="color: white; width: 597px; flex-shrink: 0;     display: flex; flex-wrap: wrap; gap: 114px;">
+                    <div class="one" style="display: flex; gap: 48px; flex-wrap: wrap;">
+                        <h2 style="font-size: 28px; margin-bottom: 30px; color: #E0E0F9; ">Контакты и обратная связь</h2>
+                    
+                        <div class="contact-info" style="margin-bottom: 30px; display: flex; gap: 36px; flex-wrap: wrap;">
+                            <p style="font-size: 20px; margin-bottom: 15px;"><strong>Библиотекарь:</strong> Иванова Мария Петровна</p>
+                            <p style="font-size: 20px; margin-bottom: 15px;"><strong>Телефон:</strong> 8 (945) 888 - 33 - 12</p>
+                            <p style="font-size: 20px; margin-bottom: 15px;"><strong>Эл. почта:</strong> library@school-site.ru</p>
+                            <p style="font-size: 20px; margin-bottom: 15px;"><strong>График работы:</strong> Пн-Пт: 9:00 – 17:00</p>
+                        </div>
+                        
+                    </div>
+                    <p style="font-size: 18px;">Мы постараемся решить вашу проблему в течение двух рабочих дней</p>
+                </div>
+                
+                <div class="right" style="background-color: #FFFFFF; width: 855px; flex-shrink: 0; height: auto;  border-radius: 24px; padding: 40px; box-sizing: border-box;">
+                    <h2 style="font-size: 32px; margin-bottom: 55px; font-family: 'Dela Gothic One'; color: #595880; text-align: center;">Остались вопросы? Напишите нам</h2>
+                    
+                    <form style="display: flex; flex-direction: column; gap: 20px;">
+                        <div>
+                            <input type="text"  placeholder="Имя" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 16px; font-size: 16px; box-sizing: border-box;">
+                        </div>
+                        
+                        <div>
+                            <input type="email" placeholder="Еmail" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 16px; font-size: 16px; box-sizing: border-box;">
+                        </div>
+                        
+                        <div>
+                             <textarea placeholder="Опишите ваш вопрос или проблему" style="width: 783px; padding: 12px; border: 1px solid #ccc; border-radius: 16px; font-size: 16px; height: 120px; resize: vertical; box-sizing: border-box; font-family: inherit; line-height: normal;"></textarea>
+                        </div>
+                        
+                        <button type="submit" style="background-color: #9D9DDA; color: white; border: none; padding: 15px 30px; border-radius: 12px; font-size: 18px;  margin-top: 10px;">
+                            Отправить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <div class="footer" style="color: #222222; background-color: #222222; padding: 60px 0; font-family: Arial, sans-serif;">
+        <div style="max-width: 1500px; margin: 0 auto; padding: 0 20px; display: flex; flex-direction: column; align-items: center;">
+            
+            <!-- Верхняя часть футера -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; width: 100%;">
+                
+                <!-- Логотип и слоган -->
+                <div style="flex: 1; max-width: 300px;">
+                    <a href="./main.html"> <img src="./img/Vector2.png" alt="BOKFlow Logo" style="height: 40px; margin-bottom: 20px;"></a>
+                    <p style="color: #FFE9D5; font-size: 16px; margin: 0; font-family: 'Mulish', sans-serif;">Волшебство начинается здесь</p>
+                </div>
+    
+                <!-- Колонки ссылок -->
+                <div style="display: flex; flex: 2; justify-content: space-around; max-width: 800px; gap: 60px;">
+                    
+                    <!-- Колонка 1 -->
+                    <div style="flex: 1;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <a href="categor.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Подборки книг</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="main.html#recommendations" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Рекомендации</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="book.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Случайная книга</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Колонка 2 -->
+                    <div style="flex: 1;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <a href="studing.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Учебная литература</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="studing.html#ege" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Подготовка к ОГЭ/ЕГЭ</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="studing.html#mir" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Мир профессий через книги</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Колонка 3 -->
+                    <div style="flex: 1;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <a href="about.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">О проекте</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="about.html#sp" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Служба поддержки</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="#" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Политика обработки персональных данных</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                </div>
+                
+                <!-- Аватарка -->
+                <div style="flex: 1; max-width: 100px; display: flex; justify-content: flex-end;">
+                   <a href="./profile.html">
+                        <img src="./img/ava.png" alt="avatar" style="width: 76px; height: 76px;">
+                    </a>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Получаем форму и кнопку отправки
+    const form = document.querySelector('form');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const nameInput = form.querySelector('input[type="text"]');
+    const emailInput = form.querySelector('input[type="email"]');
+    const messageTextarea = form.querySelector('textarea');
+    
+    // Изменение цвета кнопки при наведении
+    submitButton.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = '#7878B3';
+        this.style.transition = 'background-color 0.3s ease'; // Плавный переход
+    });
+    
+    submitButton.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = '#9D9DDA';
+    });
+    
+    // Обработка отправки формы
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем стандартную отправку
+        
+        // Валидация полей
+        let isValid = true;
+        
+        // Проверка имени
+        if (!nameInput.value.trim()) {
+            showError(nameInput, 'Пожалуйста, введите ваше имя');
+            isValid = false;
+        } else {
+            removeError(nameInput);
+        }
+        
+        // Проверка email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput.value.trim()) {
+            showError(emailInput, 'Пожалуйста, введите email');
+            isValid = false;
+        } else if (!emailPattern.test(emailInput.value)) {
+            showError(emailInput, 'Пожалуйста, введите корректный email');
+            isValid = false;
+        } else {
+            removeError(emailInput);
+        }
+        
+        // Проверка сообщения
+        if (!messageTextarea.value.trim()) {
+            showError(messageTextarea, 'Пожалуйста, введите ваше сообщение');
+            isValid = false;
+        } else if (messageTextarea.value.trim().length < 10) {
+            showError(messageTextarea, 'Сообщение должно содержать не менее 10 символов');
+            isValid = false;
+        } else {
+            removeError(messageTextarea);
+        }
+        
+        // Если все поля валидны, можно отправить форму
+        if (isValid) {
+            // Здесь можно добавить AJAX запрос для отправки данных
+            console.log('Данные формы:', {
+                name: nameInput.value,
+                email: emailInput.value,
+                message: messageTextarea.value
+            });
+            
+            // Показываем сообщение об успехе
+            alert('Спасибо! Ваше сообщение отправлено. Мы ответим вам в течение двух рабочих дней.');
+            
+            // Очищаем форму
+            form.reset();
+            
+            // Возвращаем стандартный цвет кнопки
+            submitButton.style.backgroundColor = '#9D9DDA';
+        }
+    });
+    
+    // Функции для отображения и удаления ошибок
+    function showError(inputElement, message) {
+        // Удаляем предыдущие ошибки
+        removeError(inputElement);
+        
+        // Добавляем красную рамку
+        inputElement.style.borderColor = '#ff6b6b';
+        inputElement.style.borderWidth = '2px';
+        
+        // Создаем элемент с сообщением об ошибке
+        const errorElement = document.createElement('div');
+        errorElement.className = 'error-message';
+        errorElement.style.color = '#ff6b6b';
+        errorElement.style.fontSize = '14px';
+        errorElement.style.marginTop = '5px';
+        errorElement.textContent = message;
+        
+        // Вставляем сообщение об ошибке после поля ввода
+        inputElement.parentNode.insertBefore(errorElement, inputElement.nextSibling);
+    }
+    
+    function removeError(inputElement) {
+        // Убираем красную рамку
+        inputElement.style.borderColor = '#ccc';
+        inputElement.style.borderWidth = '1px';
+        
+        // Удаляем сообщение об ошибке, если оно есть
+        const errorElement = inputElement.parentNode.querySelector('.error-message');
+        if (errorElement) {
+            errorElement.remove();
+        }
+    }
+    
+    // Добавляем стили для ошибок в textarea
+    messageTextarea.style.minHeight = '120px';
+});
+    </script>
+</body>
+</html>

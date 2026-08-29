@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: sans-serif;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .top {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .top img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .heroCont {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .header {
+            padding: 40px 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header img {
+            width: auto;
+            height: 40px;
+            position: relative;
+            object-fit: contain;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+            font-size: 18px; /* исправлено с size: 18px */
+            position: relative; /* добавьте */
+            z-index: 10; /* добавьте */
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-menu a:hover {
+            color: #cccccc;
+        }
+        
+                
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 0 0 auto;
+            
+        }
+        
+        .search-input {
+            display: flex;
+            background: white;
+            border-radius: 55px;
+            padding: 5px;
+            width: 600px;
+            max-width: 100%;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .search-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .search-btn::before {
+            font-size: 18px;
+        }
+        
+        .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+     
+    .hero-content {
+        text-align: center;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .heroblock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 2;
+    }
+
+    .heroblock h1 {
+        width: 72%;
+        font-size: 76px;
+        letter-spacing: 4%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0 0 40px 0;
+        padding: 0 20px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        font-family: "Dela Gothic One";
+    }
+    .search-container {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .search-input {
+        display: flex;
+        background: white;
+        border-radius: 55px;
+        padding: 5px;
+        width: 600px;
+        max-width: 100%;
+        margin: 0 auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .search-input input {
+        flex: 1;
+        border: none;
+        padding: 15px 25px;
+        font-size: 16px;
+        border-radius: 50px;
+        outline: none;
+    }
+
+    .search-input input::placeholder {
+        color: #999;
+    }
+
+    .search-button {
+        background: #7878B3;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 15px 40px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .search-button:hover {
+        background: #595880;
+    }
+
+    /* Добавляем отступы для основного контейнера */
+    .container {
+        padding: 80px 120px;
+        margin: 0 auto;
+    }
+
+      /* Стили для эффекта увеличения при наведении на авторов */
+    div[style*="display: flex; flex-wrap: wrap; justify-content: center; gap: 66px; margin-bottom: 80px;"] > div {
+        transition: transform 0.3s ease;
+        will-change: transform;
+    }
+    
+    div[style*="display: flex; flex-wrap: wrap; justify-content: center; gap: 66px; margin-bottom: 80px;"] > div:hover {
+        transform: scale(1.05);
+    }
+    
+    div[style*="display: flex; flex-wrap: wrap; justify-content: center; gap: 66px; margin-bottom: 80px;"] img {
+        transition: box-shadow 0.3s ease;
+    }
+    
+    div[style*="display: flex; flex-wrap: wrap; justify-content: center; gap: 66px; margin-bottom: 80px;"] > div:hover img {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Исправление для второго автора, чтобы не ломалась сетка */
+    div[style*="display: flex; flex-direction: column; align-items: center; width: 17%;"] {
+        width: auto !important;
+    }
+
+    @font-face {
+        font-family: "Dela Gothic One";
+        src: url(./fonts/DelaGothicOne-Regular.ttf);
+    }
+
+    
+    @font-face {
+        font-family: "Mulish";
+        src: url(./fonts/Mulish.ttf);
+    }
+    @font-face {
+        font-family: "Roboto";
+        src: url(./fonts/Roboto.ttf);
+    }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <img src="./img/heroblock.png" alt="Hero background">
+        <div class="heroCont">
+            <div class="header">
+                <img src="./img/Vector2.png" alt="Logo">
+                <nav>
+                    <ul class="nav-menu" style="font-family: 'Mulish'">
+                        <li><a href="categor.html">Подборки книг</a></li>
+                        <li><a href="studing.html">Учебная литература</a></li>
+                        <li><a href="book.html">Случайная книга</a></li>
+                        <li><a href="about.html">О проекте</a></li>
+                        <li><a href="pp2/main.html">ВЫБОРЕСТЬ</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <div class="search-input" style="width: 280px; height: 40px; display: flex; align-items: center; position: relative; z-index: 2;">
+                        <input type="text" placeholder="Поик" style="flex: 1; height: 100%; border: none; outline: none; padding-right: 8px;">
+                        <img src="./img/p.svg" alt="" style="width: 16px; height: 16px; margin-right: 10px;">
+                    </div>
+                    <div class="avatar">
+                    <a href="./profile.html">
+                        <img src="./img/ava.png" alt="avatar">
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <div class="heroblock">
+                <h1>
+                    УДИВИТЕЛЬНЫЙ МИР НАЧИНАЕТСЯ ЗДЕСЬ
+                </h1>
+            
+            <div class="search-container">
+                <div class="search-input">
+                    <input type="text" placeholder="Искать книгу, автора или тему ...">
+                    <button class="search-button">Найти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <!-- Основной контейнер с отступами -->
+    <div class="container" style="background: #FFFAF6; border-radius: 40px 40px 0 0; margin-top: -40px; position: relative; z-index: 3; padding: 80px 120px; ">
+        <div class="categoriesBlck" style="display: flex; gap: 24px;">
+            <!-- Левая часть с картинкой -->
+              <a href="catalog.html" style="text-decoration: none; display: block;">
+                <div class="categories-header" style="position: relative; width: 547px; height: 500px; flex-shrink: 0;">
+                    <!-- Картинка -->
+                    <img src="./img/1.png" alt="Подборки" style="width: 100%; height: 100%; border-radius: 24px;">
+                    
+                    <!-- Текст поверх картинки -->
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; padding: 48px 36px; box-sizing: border-box; display: flex; align-items: center; justify-content: flex-start;">
+                        <h2 style="margin: 0; color: white; text-align: left; font-size: 30px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); font-family: 'Dela Gothic One', sans-serif; text-transform: uppercase; letter-spacing: 1.5px; line-height: 1.3;">
+                            СМОТРЕТЬ ВСЕ ПОДБОРКИ КНИГ
+                        </h2>
+                    </div>
+                </div>
+            </a>
+
+                <!-- Правая часть с 4 блоками (2x2) -->
+            <div class="categories-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 10px; flex: 1;">
+                <div class="category-card" style="width: 546px; height: 240px; border-radius: 24px; padding: 20px; display: flex; align-items: center; justify-content: center; background: url('./img/2.png') center/cover no-repeat;">
+                    <h3 style="margin: 0; color: white; font-size: 24px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);  font-family: 'Mulish', sans-serif; ">РОМАНТИКА</h3>
+                </div>
+                <div class="category-card" style="width: 546.6666259765625px; height: 240px; border-radius: 24px; padding: 20px; display: flex; align-items: center; justify-content: center; background: url('./img/2.png') center/cover no-repeat;">
+                    <h3 style="margin: 0; color: white; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-family: 'Mulish', sans-serif;">ПРИКЛЮЧЕНИЯ</h3>
+                </div>
+                <div class="category-card" style="width: 546.6666259765625px; height: 240px; border-radius: 24px; padding: 20px; display: flex; align-items: center; justify-content: center; background: url('./img/2.png') center/cover no-repeat;">
+                    <h3 style="margin: 0; color: white; font-size: 24px; font-weight: bold;  font-family: 'Mulish', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">КЛАССИКА</h3>
+                </div>
+                <div class="category-card" style="width: 546.6666259765625px; height: 240px; border-radius: 24px; padding: 20px; display: flex; align-items: center; justify-content: center; background: url('./img/2.png') center/cover no-repeat;">
+                    <h3 style="margin: 0; color: white; font-size: 24px; font-weight: bold;  font-family: 'Mulish', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">ИСТОРИЧЕСКИЕ</h3>
+                </div>
+            </div>
+        </div>
+            <!-- Блок "Рекомендуем" -->
+        <div class="recomendationBlock" id="recommendations"  style="margin-top: 80px;">
+            <div class="title" style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="font-size: 36px; font-weight: Regular; color: #7878B3; font-family: 'Dela Gothic One', sans-serif;  margin: 0;">Рекомендуем</h1>
+                <a href="#" style="color: #7878B3; font-size: 20px; font-weight: 500; text-decoration: none; font-family: Mulish, sans-serif; display: flex; align-items: center; gap: 8px;">
+                    Смотреть больше
+                    <span style="font-size: 24px;">→</span>
+                </a>
+            </div>
+                        
+            <!-- Книги по горизонтали -->
+            <div style="display: flex; overflow-x: auto; padding-bottom: 20px; gap: 20px;">
+              <!-- Книга 1 -->
+            <div style="width: 320px;">
+                <img src="./img/books/books.m.png" alt="Мастер и Маргарита" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Мастер и Маргарита</h3>
+                <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Михаил Булгаков</p>
+                
+                <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                </div>
+            </div>
+                
+                <!-- Книга 2 -->
+                <div style="width: 320px;">
+                    <img src="./img/books/books.ev.png" alt="Евгений Онегин" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Евгений Онегин</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Александр Сергеевич Пушкин</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 3 -->
+                <div style="width: 320px;">
+                    <img src="./img/books/books.vish.png" alt="Вишневый сад" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Вишневый сад</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Антон Чехов</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 4 -->
+                <div style="width: 320px;">
+                    <img src="./img/books/books.Captain'sDaughter.png" alt="Капитанская дочка" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Капитанская дочка</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Александр Сергеевич Пушкин</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 5 -->
+                <div style="width: 320px;">
+                    <img src="./img/books/books.prn.png" alt="Преступление и наказание" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Arial, sans-serif;">Преступление и наказание</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Arial, sans-serif;">Федор Достоевский</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Блок "Классика, которую не задают в школе" -->
+        <div class="recomendationBlock" style="margin-top: 80px;">
+            <div class="title" style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="font-size: 36px; font-weight: Regular; color: #7878B3; font-family: 'Dela Gothic One', sans-serif;  margin: 0;">Классика, которую не задают в школе</h1>
+                <a href="#" style="color: #7878B3; font-size: 20px; font-weight: 500; text-decoration: none; font-family: Mulish, sans-serif; display: flex; align-items: center; gap: 8px;">
+                    Смотреть больше
+                    <span style="font-size: 24px;">→</span>
+                </a>
+            </div>
+                        
+            <!-- Книги по горизонтали -->
+            <div style="display: flex; overflow-x: auto; padding-bottom: 20px; gap: 20px;">
+                <!-- Книга 1 -->
+                <div style="width: 320px;">
+                    <img src="./img/books2/books.mzh.png" alt="Маленькие женщины" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Маленькие женщины</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Луиза Мэй Олкотт</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 2 -->
+                <div style="width: 320px;">
+                    <img src="./img/books2/books.msh.png" alt="Франкенштейн, или Современный Прометей" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Франкенштейн, или Современный Прометей</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Мэри Шелли</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                <!-- Книга 3 -->
+                <div style="width: 320px;">
+                    <img src="./img/books2/books.li.png" alt="Убить пересмешника" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Убить пересмешника</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Харпер Ли</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 4 -->
+                <div style="width: 320px;">
+                    <img src="./img/books2/books.b.png" alt="Бесы" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Бесы</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Федор Достоевский</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+                
+                <!-- Книга 5 -->
+                <div style="width: 320px;">
+                    <img src="./img/books2/books.mili.png" alt="Грозовой перевал" style="width: 310px; height: 310px; border-radius: 20px; object-fit: cover; object-position: top;">
+                    <h3 style="font-size: 18px; font-weight: bold; color: #000000; margin: 15px 0 5px 0; font-family: Mulish, sans-serif;">Грозовой перевал</h3>
+                    <p style="color: #6B6B6B; margin: 0; font-size: 14px; font-family: Mulish, sans-serif;">Эмили Бронте</p>
+                    <div style="display: flex; align-items: center; margin-top: 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0983851 5.39373C-0.0928804 5.20825 0.0110154 4.87293 0.269718 4.84076L3.93541 4.38481C4.04084 4.3717 4.13243 4.30227 4.1769 4.20117L5.72303 0.686079C5.83215 0.438005 6.16845 0.437958 6.27757 0.686031L7.82371 4.20109C7.86818 4.3022 7.95916 4.37182 8.0646 4.38493L11.7305 4.84076C11.9892 4.87293 12.0928 5.20835 11.9015 5.39383L9.1917 8.02223C9.11374 8.09783 9.07904 8.21035 9.09973 8.31956L9.81891 12.1163C9.86969 12.3843 9.59775 12.5919 9.37042 12.4584L6.14939 10.5672C6.05674 10.5128 5.94418 10.5131 5.85153 10.5675L2.63016 12.458C2.40283 12.5914 2.1304 12.3843 2.18117 12.1163L2.90047 8.31979C2.92116 8.21059 2.88654 8.0978 2.80859 8.02221L0.0983851 5.39373Z" stroke="#6B6B6B" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-family: Mulish, sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; color: #6B6B6B; margin-left: 4px;">4.9</span>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <!-- Блок "Книга дня" -->
+        <div class="daylyBook" style="width: 1680px; height: 533px; margin: 80px auto 0 auto; background: #F0F0F0; border-radius: 24px; padding: 76px 80px; color: #F0F0F0; display: flex; gap: 80px; align-items: center; position: relative; overflow: hidden; box-sizing: border-box;">
+                    
+            <!-- Левая часть с картинкой -->
+            <div style="flex-shrink: 0;">
+                <img src="./img/malpr.png" alt="маленькийпринцИллюстрация" style="width: 720px; height: 380px; border-radius: 24px; object-fit: cover;">
+            </div>
+            <!-- Правая часть -->
+            <div class="textCont">
+                <!-- Возраст и теги -->
+                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 24px;">
+                    <div style="display: flex; gap: 10px;">
+                        <span style="background: #9D9DDA; color: #FFFFFF; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-family: Arial, sans-serif;">12+</span>
+                        <span style="background: #FFFFFF; color: #9D9DDA; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-family: Arial, sans-serif;">сказка</span>
+                        <span style="background: #FFFFFF; color: #9D9DDA; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-family: Arial, sans-serif;">фантастика</span>
+                        <span style="background: #FFFFFF; color: #9D9DDA; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-family: Arial, sans-serif;">смысл жизни</span>
+                        <span style="background: #FFFFFF; color: #9D9DDA; padding: 8px 16px; border-radius: 8px; font-size: 16px; font-family: Arial, sans-serif;">дружба</span>
+                    </div>
+                </div>
+                <h1 style="color: #000000; margin: 0 0 20px 0; font-size: 28px; font-family: Roboto, sans-serif;">
+                    Маленький принц - Антуан де Сент-Экзюпери
+                </h1>
+                <p style="color: #595880; font-size: 16px; font-family: 'Mulish', sans-serif; font-weight: 400; line-height: 28px; margin: 0 0 24px 0;">
+                    Посмотри как-нибудь вечером на звёзды. Возможно, ты увидишь планету, где живёт Маленький принц. У него звонкий смех, и он понимает многое, чего не понимают взрослые. Он облетел много планет и много кого встречал на своём пути. Был он и на нашей Земле. Одному лётчику посчастливилось встретиться и подружиться с ним! Об этой необыкновенной встрече читай эту книгу — историю Маленького принца.
+                </p>
+                
+                 <!-- Цитата в правой части -->
+                <div style="width: 100%; margin: 24px 0; display: flex; align-items: flex-start; gap: 10px;">
+                    <svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 5.08012V2.92012C18 2.24805 18 1.91177 17.8677 1.65508C17.7512 1.42928 17.5656 1.24584 17.3371 1.13079C17.0774 1 16.7371 1 16.057 1H13.8713C13.1912 1 12.8517 1 12.5919 1.13079C12.3635 1.24584 12.1772 1.42928 12.0608 1.65508C11.9286 1.91152 11.9286 2.2474 11.9286 2.91815V7.00012L16.059 7C16.7378 7 17.0776 7 17.3371 6.86934C17.5656 6.75429 17.7512 6.57023 17.8677 6.34444C18 6.08774 18 5.75218 18 5.08012Z" fill="#7878B3"/>
+                        <path d="M7.07143 5.08012V2.92012C7.07143 2.24805 7.07143 1.91177 6.93908 1.65508C6.82266 1.42928 6.63703 1.24584 6.40855 1.13079C6.1488 1 5.80852 1 5.12845 1H2.94274C2.26267 1 1.92312 1 1.66337 1.13079C1.43489 1.24584 1.24864 1.42928 1.13222 1.65508C1 1.91152 1 2.24741 1 2.91816V7.00012L5.13045 7C5.80918 7 6.14906 7 6.40855 6.86934C6.63703 6.75429 6.82266 6.57023 6.93908 6.34444C7.07143 6.08774 7.07143 5.75218 7.07143 5.08012Z" fill="#7878B3"/>
+                        <path d="M4.64286 13C2.63096 13 1 11.3882 1 9.4V7.00012M1 7.00012V2.91816C1 2.24741 1 1.91152 1.13222 1.65508C1.24864 1.42928 1.43489 1.24584 1.66337 1.13079C1.92312 1 2.26267 1 2.94274 1H5.12845C5.80852 1 6.1488 1 6.40855 1.13079C6.63703 1.24584 6.82266 1.42928 6.93908 1.65508C7.07143 1.91177 7.07143 2.24805 7.07143 2.92012V5.08012C7.07143 5.75218 7.07143 6.08774 6.93908 6.34444C6.82266 6.57023 6.63703 6.75429 6.40855 6.86934C6.14906 7 5.80918 7 5.13045 7L1 7.00012ZM15.5714 13C13.5595 13 11.9286 11.3882 11.9286 9.4L11.9286 7.00012M11.9286 7.00012V2.91815C11.9286 2.2474 11.9286 1.91152 12.0608 1.65508C12.1772 1.42928 12.3635 1.24584 12.5919 1.13079C12.8517 1 13.1912 1 13.8713 1H16.057C16.7371 1 17.0774 1 17.3371 1.13079C17.5656 1.24584 17.7512 1.42928 17.8677 1.65508C18 1.91177 18 2.24805 18 2.92012V5.08012C18 5.75218 18 6.08774 17.8677 6.34444C17.7512 6.57023 17.5656 6.75429 17.3371 6.86934C17.0776 7 16.7378 7 16.059 7L11.9286 7.00012Z" stroke="#7878B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div style="font-family: 'Mulish', sans-serif; font-weight: 400; font-style: italic; font-size: 14px; line-height: 28px; color: #7878B3;">
+                        Если ты приручишь меня, мы будем нужны друг другу. Для меня ты станешь единственным во всём мире. И для тебя я стану единственным во всём мире
+                    </div>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <button style="width: 70%; height: 47px; background-color: #FDB373; color: #FFFFFF; border: none; border-radius: 12px; padding: 12px 24px; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Mulish', sans-serif; transition: all 0.3s ease;"
+                            onmouseover="this.style.backgroundColor='#F68019'"
+                            onmouseout="this.style.backgroundColor='#FDB373'">
+                        Читать книгу
+                    </button>
+                    
+                    <button style="width: 30%; height: 47px; background-color: transparent; color: #FF9C46; border: 2px solid #FF9C46; border-radius: 12px; padding: 12px 24px; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Mulish', sans-serif; transition: all 0.3s ease;"
+                            onmouseover="this.style.backgroundColor='#F68019'; this.style.color='#FFFFFF'; this.style.borderColor='#F68019'"
+                            onmouseout="this.style.backgroundColor='transparent'; this.style.color='#FF9C46'; this.style.borderColor='#FF9C46'">
+                            <a href="book.html" style="color: inherit; text-decoration: none; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                                Подробнее
+                            </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Цитата на картинке -->
+    <div class="quoteBlock" style="position: relative; width: 100%; height: 500px; overflow: hidden;">
+        <img src="./img/3.png" alt="Фон" style="width: 100%; height: 500px; object-fit: cover;  filter: brightness(50%);">
+        
+        <!-- Текст поверх картинки -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; padding: 80px 120px; box-sizing: border-box; background: rgba(0, 0, 0, 0.3);">
+            
+            <!-- Левая кавычка -->
+            <div style="margin-bottom: 20px; align-self: flex-start;">
+                <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M29 7.8002V4.2002C29 3.08009 29 2.51962 28.782 2.0918C28.5903 1.71547 28.2845 1.40973 27.9082 1.21799C27.4804 1 26.9199 1 25.7998 1H22.1998C21.0797 1 20.5204 1 20.0926 1.21799C19.7163 1.40973 19.4095 1.71547 19.2178 2.0918C19 2.5192 19 3.07901 19 4.19692V11.0002L25.8031 11C26.921 11 27.4808 11 27.9082 10.7822C28.2845 10.5905 28.5903 10.2837 28.782 9.90739C29 9.47957 29 8.9203 29 7.8002Z" fill="white"/>
+                    <path d="M11 7.8002V4.2002C11 3.08009 11 2.51962 10.782 2.0918C10.5903 1.71547 10.2845 1.40973 9.9082 1.21799C9.48038 1 8.91991 1 7.7998 1H4.1998C3.0797 1 2.52043 1 2.09261 1.21799C1.71628 1.40973 1.40952 1.71547 1.21777 2.0918C1 2.5192 1 3.07902 1 4.19694V11.0002L7.80309 11C8.921 11 9.4808 11 9.9082 10.7822C10.2845 10.5905 10.5903 10.2837 10.782 9.90739C11 9.47957 11 8.9203 11 7.8002Z" fill="white"/>
+                    <path d="M7 21C3.68629 21 1 18.3137 1 15V11.0002M1 11.0002V4.19694C1 3.07902 1 2.5192 1.21777 2.0918C1.40952 1.71547 1.71628 1.40973 2.09261 1.21799C2.52043 1 3.0797 1 4.1998 1H7.7998C8.91991 1 9.48038 1 9.9082 1.21799C10.2845 1.40973 10.5903 1.71547 10.782 2.0918C11 2.51962 11 3.08009 11 4.2002V7.8002C11 8.9203 11 9.47957 10.782 9.90739C10.5903 10.2837 10.2845 10.5905 9.9082 10.7822C9.4808 11 8.921 11 7.80309 11L1 11.0002ZM25 21C21.6863 21 19 18.3137 19 15L19 11.0002M19 11.0002V4.19692C19 3.07901 19 2.5192 19.2178 2.0918C19.4095 1.71547 19.7163 1.40973 20.0926 1.21799C20.5204 1 21.0797 1 22.1998 1H25.7998C26.9199 1 27.4804 1 27.9082 1.21799C28.2845 1.40973 28.5903 1.71547 28.782 2.0918C29 2.51962 29 3.08009 29 4.2002V7.8002C29 8.9203 29 9.47957 28.782 9.90739C28.5903 10.2837 28.2845 10.5905 27.9082 10.7822C27.4808 11 26.921 11 25.8031 11L19 11.0002Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <!-- Текст цитаты -->
+            <h1 style="text-align: left; font-size: 28px; font-family: 'Mulish', sans-serif; margin: 0 40px;">
+                Смелость — это не отсутствие страха, а понимание того, что есть нечто более важное, чем страх. И храбрый человек — это не тот, кто не боится, а тот, кто побеждает свой страх.
+            </h1>
+            
+            <!-- Правая кавычка -->
+            <div style="margin-top: 20px; align-self: flex-end;">
+                <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 14.1998V17.7998C1 18.9199 1 19.4804 1.21799 19.9082C1.40973 20.2845 1.71547 20.5903 2.0918 20.782C2.51962 21 3.08009 21 4.2002 21H7.8002C8.9203 21 9.47957 21 9.90739 20.782C10.2837 20.5903 10.5905 20.2845 10.7822 19.9082C11 19.4808 11 18.921 11 17.8031V10.9998L4.19691 11C3.079 11 2.5192 11 2.0918 11.2178C1.71547 11.4095 1.40973 11.7163 1.21799 12.0926C1 12.5204 1 13.0797 1 14.1998Z" fill="white"/>
+                    <path d="M19 14.1998V17.7998C19 18.9199 19 19.4804 19.218 19.9082C19.4097 20.2845 19.7155 20.5903 20.0918 20.782C20.5196 21 21.0801 21 22.2002 21H25.8002C26.9203 21 27.4796 21 27.9074 20.782C28.2837 20.5903 28.5905 20.2845 28.7822 19.9082C29 19.4808 29 18.921 29 17.8031V10.9998L22.1969 11C21.079 11 20.5192 11 20.0918 11.2178C19.7155 11.4095 19.4097 11.7163 19.218 12.0926C19 12.5204 19 13.0797 19 14.1998Z" fill="white"/>
+                    <path d="M23 1C26.3137 1 29 3.68629 29 7V10.9998M29 10.9998V17.8031C29 18.921 29 19.4808 28.7822 19.9082C28.5905 20.2845 28.2837 20.5903 27.9074 20.782C27.4796 21 26.9203 21 25.8002 21H22.2002C21.0801 21 20.5196 21 20.0918 20.782C19.7155 20.5903 19.4097 20.2845 19.218 19.9082C19 19.4804 19 18.9199 19 17.7998V14.1998C19 13.0797 19 12.5204 19.218 12.0926C19.4097 11.7163 19.7155 11.4095 20.0918 11.2178C20.5192 11 21.079 11 22.1969 11L29 10.9998ZM5 1C8.31371 1 11 3.68629 11 7L11 10.9998M11 10.9998V17.8031C11 18.921 11 19.4808 10.7822 19.9082C10.5905 20.2845 10.2837 20.5903 9.90739 20.782C9.47957 21 8.9203 21 7.8002 21H4.2002C3.08009 21 2.51962 21 2.0918 20.782C1.71547 20.5903 1.40973 20.2845 1.21799 19.9082C1 19.4804 1 18.9199 1 17.7998V14.1998C1 13.0797 1 12.5204 1.21799 12.0926C1.40973 11.7163 1.71547 11.4095 2.0918 11.2178C2.5192 11 3.079 11 4.19691 11L11 10.9998Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <!-- Автор и стрелка -->
+            <div style="display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-top: 40px; width: 100%;">
+                <p style="font-size: 20px; margin: 0; color: #DBDBF9; font-family: 'Mulish', sans-serif;">
+                    «Амбер Браун», Пола Данзигер
+                </p>
+                <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L9 9L1 17" stroke="#DBDBF9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; margin: 0 auto;">
+        <h1 style="color: #7878B3; margin-bottom: 40px; font-family: 'Dela Gothic One'; font-size: 36px; text-align: center; width: 100%;">
+            Популярные авторы
+        </h1>        
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 66px; margin-bottom: 80px;">
+            <!-- автор 1 -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./img/authors/as1.png" alt="Пушкин" style="width: 120px; height: 120px; border-radius: 50%;">
+                <p style="color: #000000; margin: 10px 0 0 0; font-size: 16px; font-family: Mulish, sans-serif; text-align: center;">
+                    Александр Сергеевич Пушкин
+                </p>
+            </div>
+            
+            <!-- автор 2 -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 17%;">
+                <img src="./img/authors/vv.png" alt="Маяковский" style="width: 120px; height: 120px; border-radius: 50%;">
+                <p style="color: #000000; margin: 10px 0 0 0; font-size: 16px; font-family: Mulish, sans-serif; text-align: center;">
+                    Владимир Владимирович Маяковский 
+                </p>
+            </div>
+            <!-- автор 3 -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./img/authors/sa.png" alt="Есенин" style="width: 120px; height: 120px; border-radius: 50%;">
+                <p style="color: #000000; margin: 10px 0 0 0; font-size: 16px; font-family: Mulish, sans-serif; text-align: center;">
+                    Сергей Александрович Есенин
+                </p>
+            </div>
+            <!-- автор 4 -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./img/authors/nv.png" alt="Гоголь" style="width: 120px; height: 120px; border-radius: 50%;">
+                <p style="color: #000000; margin: 10px 0 0 0; font-size: 16px; font-family: Mulish, sans-serif; text-align: center;">
+                    Николай Васильевич Гоголь 
+                </p>
+            </div>
+            <!-- автор 5 -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./img/authors/ap.png" alt="Чехов" style="width: 120px; height: 120px; border-radius: 50%;">
+                <p style="color: #000000; margin: 10px 0 0 0; font-size: 16px; font-family: Mulish, sans-serif; text-align: center;">
+                    Антон Павлович Чехов
+                </p>
+            </div>
+            <!-- автор 6 -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./img/authors/ivs.png" alt="Тургенев" style="width: 120px; height: 120px; border-radius: 50%;">
+                <p style="color: #000000; margin: 10px 0 0 0; font-size: 16px; font-family: Mulish, sans-serif; text-align: center;">
+                    Иван Сергеевич Тургенев
+                </p>
+            </div>
+        </div>
+        
+        <div class="containertwo" style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; margin: 0 auto;">
+            <h1 style="color: #7878B3; margin-bottom: 40px; font-family: 'Dela Gothic One'; font-size: 36px; text-align: left; width: 100%;">
+                Мероприятия библиотеки
+            </h1>
+            
+            <!-- Контейнер для горизонтального расположения -->
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                <!-- Мероприятие 1 -->
+                <div class="categoryCard" style="margin-bottom: 30px; width: 547px;">
+                    <img src="./img/book.jpg" alt="Долги в прошлом" style="height: 280px; width: 100%; border-radius: 24px; margin-bottom: 16px;">
+                    <h1 style="color: #353459; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 16px; line-height: 100%; letter-spacing: 0%; margin: 0 0 8px 0; width: 100%;">
+                        Долги в прошлом!
+                    </h1>
+                    <p style="color: #6B6B6B; font-family: 'Mulish', sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; letter-spacing: 0%; margin: 0 0 12px 0; width: 100%;">
+                        Забыли сдать книги вовремя? Эта неделя - ваш шанс! Приносите любые задержанные книги - все штрафы будут аннулированы
+                    </p>
+                    <h1 style="color: #353459; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 16px; line-height: 100%; letter-spacing: 0%; margin: 0; width: 100%;">
+                        только 23 февраля - 28 февраля
+                    </h1>
+                </div>
+        
+                <!-- Мероприятие 2 -->
+                <div class="categoryCard" style="margin-bottom: 30px; width: 547px;">
+                    <img src="./img/man.book.jpg" alt="Долги в прошлом" style="height: 280px; width: 100%; border-radius: 24px; margin-bottom: 16px;">
+                    <h1 style="color: #353459; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 16px; line-height: 100%; letter-spacing: 0%; margin: 0 0 8px 0; width: 100%;">
+                        Встреча с детским писателем Алексеем Олейниковым
+                    </h1>
+                    <p style="color: #6B6B6B; font-family: 'Mulish', sans-serif; font-weight: 400; font-size: 14px; line-height: 100%; letter-spacing: 0%; margin: 0 0 12px 0; width: 100%;">
+                        Автор книги «Сонный мальчик» расскажет о том, как рождаются стихи и истории для подростков, и проведёт мастер-класс
+                    </p>
+                    <h1 style="color: #353459; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 16px; line-height: 100%; letter-spacing: 0%; margin: 0; width: 100%;">
+                        20 февраля, 13:00
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" style="color: #222222; background-color: #222222; padding: 60px 0; font-family: Arial, sans-serif;">
+        <div style="max-width: 1500px; margin: 0 auto; padding: 0 20px; display: flex; flex-direction: column; align-items: center;">
+            
+            <!-- Верхняя часть футера -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; width: 100%;">
+                
+                <!-- Логотип и слоган -->
+                <div style="flex: 1; max-width: 300px;">
+                    <a href="./main.html"> <img src="./img/Vector2.png" alt="BOKFlow Logo" style="height: 40px; margin-bottom: 20px;"></a>
+                    <p style="color: #FFE9D5; font-size: 16px; margin: 0; font-family: 'Mulish', sans-serif;">Волшебство начинается здесь</p>
+                </div>
+    
+                <!-- Колонки ссылок -->
+                <div style="display: flex; flex: 2; justify-content: space-around; max-width: 800px; gap: 60px;">
+                    
+                    <!-- Колонка 1 -->
+                    <div style="flex: 1;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <a href="categor.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Подборки книг</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="main.html#recommendations" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Рекомендации</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="book.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Случайная книга</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Колонка 2 -->
+                    <div style="flex: 1;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <a href="studing.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Учебная литература</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="studing.html#ege" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Подготовка к ОГЭ/ЕГЭ</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="studing.html#mir" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Мир профессий через книги</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Колонка 3 -->
+                    <div style="flex: 1;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <a href="about.html" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">О проекте</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="about.html#sp" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Служба поддержки</a>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <a href="#" style="color: white; text-decoration: none; font-size: 16px; font-family: 'Mulish', sans-serif;">Политика обработки персональных данных</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                </div>
+                
+                <!-- Аватарка -->
+                <div style="flex: 1; max-width: 100px; display: flex; justify-content: flex-end;">
+                    <a href="./profile.html">
+                        <img src="./img/ava.png" alt="avatar" style="width: 76px; height: 76px;">
+                    </a>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</body>
+</html>
